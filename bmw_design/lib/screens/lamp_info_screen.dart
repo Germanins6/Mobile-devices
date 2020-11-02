@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lamp/app.dart';
 import '../app.dart';
 import '../widgets/color_sample.dart';
 import '../widgets/product_feature.dart';
@@ -14,8 +15,8 @@ class CarInfoScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 5, child: _LampPreview(car: bmw)),
-              Expanded(flex: 5, child: _LampInfo(car: bmw)),
+              Expanded(flex: 5, child: _CarPreview(car: bmw)),
+              Expanded(flex: 5, child: _CarInfo(car: bmw)),
             ],
           ),
           SafeArea(
@@ -37,7 +38,6 @@ class CarInfoScreen extends StatelessWidget {
     );
   }
 }
-
 
 class _MenuButton extends StatelessWidget {
   @override
@@ -81,17 +81,17 @@ class _BackButton extends StatelessWidget {
             child: Container(
               width: 9,
               height: 9,
-              ),
+            ),
           ),
         ],
-        ),
-      );
+      ),
+    );
   }
 }
 
-class _LampInfo extends StatelessWidget {
-  final Lamp lamp;
-  _LampInfo({this.lamp});
+class _CarInfo extends StatelessWidget {
+  final Car bmw;
+  _CarInfo({this.bmw});
 
   @override
   Widget build(BuildContext context) {
@@ -100,46 +100,28 @@ class _LampInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _LampName(name: lamp.name),
+          _CarName(name: bmw.name),
           SizedBox(height: 6),
-          _LampDescription(descr: lamp.description),
+          _CarDescription(descr: bmw.description),
           SizedBox(height: 16),
-          _LampFeatures(features: lamp.features),
-          Spacer(),
-          _LampPrice(price: lamp.price),
+          _CarSpecs(specs: bmw.car_specs),
+          //Spacer(),
         ],
       ),
     );
   }
 }
 
-class _LampPrice extends StatelessWidget {
-  final double price;
-  _LampPrice({this.price});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      '\$$price',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontFamily: 'MontserratAlternates',
-        fontSize: 20,
-      ),
-    );
-  }
-}
-
-class _LampFeatures extends StatelessWidget {
-  final List<Feature> features;
-  _LampFeatures({this.features});
+class _CarSpecs extends StatelessWidget {
+  final List<Specs> car_specs;
+  _CarSpecs({this.car_specs});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        for (var feature in features)
+        for (var feature in car_specs)
           ProductFeature(
             iconName: feature.icon,
             units: feature.units,
@@ -150,14 +132,13 @@ class _LampFeatures extends StatelessWidget {
   }
 }
 
-
-class _LampDescription extends StatelessWidget {
-  final String descr;
-  _LampDescription({this.descr});
+class _CarDescription extends StatelessWidget {
+  final String review;
+  _CarDescription({this.review});
   @override
   Widget build(BuildContext context) {
     return Text(
-      descr,
+      review,
       style: TextStyle(
         color: Colors.grey,
         fontSize: 12,
@@ -166,10 +147,9 @@ class _LampDescription extends StatelessWidget {
   }
 }
 
-
-class _LampName extends StatelessWidget {
+class _CarName extends StatelessWidget {
   final String name;
-  _LampName({this.name});
+  _CarName({this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -207,36 +187,34 @@ class _LampName extends StatelessWidget {
   }
 }
 
+//Still developing widget
+class _CarModel extends StatelessWidget {
+  final String model;
+  _CarModel({this.model});
 
-class _LampPreview extends StatelessWidget {
-  final Lamp lamp;
-  _LampPreview({@required this.lamp});
+  Widget build(BuildContext context) {}
+}
+
+class _CarPreviewContainer extends StatelessWidget {
+  final Car bmw;
+  _CarPreviewContainer({@required this.bmw});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(40),
-        ),
-      ),
       child: Column(
         children: [
-          _LampPhoto(asset: lamp.photoUrl),
+          _CarPicture(asset: bmw.photoUrl),
           Spacer(),
-          _LampColors(color: lamp.color),
-          SizedBox(height: 16),
         ],
       ),
     );
   }
 }
-*/
 
-class _LampPhoto extends StatelessWidget {
+class _CarPicture extends StatelessWidget {
   final String asset;
-  _LampPhoto({this.asset});
+  _CarPicture({this.asset});
 
   @override
   Widget build(BuildContext context) {
@@ -248,34 +226,11 @@ class _LampPhoto extends StatelessWidget {
 }
 
 /*
-class _LampColors extends StatelessWidget {
-  final Color color;
-  _LampColors({this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ColorSample(
-          color: Colors.white,
-          colorName: 'White',
-          selected: color == Colors.white,
+Needed later 
+decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(40),
         ),
-        SizedBox(width: 12),
-        ColorSample(
-          color: Colors.amber,
-          colorName: 'Yellow',
-          selected: color == Colors.amber,
-        ),
-        SizedBox(width: 12),
-        ColorSample(
-          color: Colors.orange,
-          colorName: 'Orange',
-          selected: color == Colors.orange,
-        )
-      ],
-    );
-  }
-}
+      ),
 */
