@@ -3,9 +3,9 @@ import '../app.dart';
 import '../widgets/color_sample.dart';
 import '../widgets/product_feature.dart';
 
-class LampInfoScreen extends StatelessWidget {
-  final Lamp lamp;
-  LampInfoScreen({@required this.lamp});
+class CarInfoScreen extends StatelessWidget {
+  final Car bmw;
+  CarInfoScreen({@required this.bmw, Car car});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +14,8 @@ class LampInfoScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 5, child: _LampPreview(lamp: lamp)),
-              Expanded(flex: 5, child: _LampInfo(lamp: lamp)),
+              Expanded(flex: 5, child: _LampPreview(car: bmw)),
+              Expanded(flex: 5, child: _LampInfo(car: bmw)),
             ],
           ),
           SafeArea(
@@ -25,12 +25,12 @@ class LampInfoScreen extends StatelessWidget {
             ),
           ),
           Align(
-            alignment: Alignment.bottomRight,
-            child: _AddToCart(),
+            alignment: Alignment.topLeft,
+            child: _BackButton(),
           ),
           Align(
             alignment: Alignment.topRight,
-            child: _ShoppingCartButton(),
+            child: _MenuButton(),
           )
         ],
       ),
@@ -38,6 +38,7 @@ class LampInfoScreen extends StatelessWidget {
   }
 }
 
+/*
 class _ShoppingCartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -162,6 +163,7 @@ class _LampFeatures extends StatelessWidget {
   }
 }
 
+
 class _LampDescription extends StatelessWidget {
   final String descr;
   _LampDescription({this.descr});
@@ -176,6 +178,7 @@ class _LampDescription extends StatelessWidget {
     );
   }
 }
+
 
 class _LampName extends StatelessWidget {
   final String name;
@@ -217,6 +220,7 @@ class _LampName extends StatelessWidget {
   }
 }
 
+
 class _LampPreview extends StatelessWidget {
   final Lamp lamp;
   _LampPreview({@required this.lamp});
@@ -241,6 +245,7 @@ class _LampPreview extends StatelessWidget {
     );
   }
 }
+*/
 
 class _LampPhoto extends StatelessWidget {
   final String asset;
@@ -255,6 +260,7 @@ class _LampPhoto extends StatelessWidget {
   }
 }
 
+/*
 class _LampColors extends StatelessWidget {
   final Color color;
   _LampColors({this.color});
@@ -285,3 +291,4 @@ class _LampColors extends StatelessWidget {
     );
   }
 }
+*/

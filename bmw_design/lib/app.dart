@@ -2,41 +2,41 @@ import 'package:flutter/material.dart';
 
 import 'screens/lamp_info_screen.dart';
 
-class Feature {
-  String icon, units;
+class Specs {
+  String image, units;
   num value;
-  Feature(this.icon, this.units, this.value);
+  Specs(this.image, this.units, this.value);
 }
 
-class Lamp {
+class Car {
+  String title;
   String name;
-  double price;
-  List<Feature> features;
+  String model;
   String description;
   String photoUrl;
-  Color color;
-  Lamp(
+  List<Specs> car_specs;
+
+  Car(
+    this.title,
     this.name,
+    this.model,
     this.description,
-    this.price,
     this.photoUrl,
-    this.features,
-    this.color,
+    this.car_specs,
   );
 }
 
-final melodiLamp = Lamp(
-  'Melodi',
-  'Reprehenderit sit excepteur aliquip sit laboris consequat pariatur aliquip in anim laboris.',
-  15.99,
+final bmw = Car(
+  'YOUR VISION IS OUR NEXT INVETION',
+  'BMW',
+  'I8 SHADOW EDITION',
+  'Mollit do adipisicing ut qui. Ea ad officia commodo est ea laborum commodo aute non. Adipisicing occaecat adipisicing voluptate sint quis quis eiusmod non officia laboris.',
   'assets/mainImage.jpg',
   [
-    Feature('lamp', 'W', 22),
-    Feature('hruler', 'cm', 28),
-    Feature('vruler', 'cm', 26),
-    Feature('plug', 'm', 1.6),
+    Specs('buttonImage.jpg', 'KM/H', 60),
+    Specs('Button2Image,png', 'MPH', 175),
+    Specs('button3Image.jpg', 'MPH', 175),
   ],
-  Colors.amber,
 );
 
 class LampInfoApp extends StatelessWidget {
@@ -47,8 +47,8 @@ class LampInfoApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
-      home: LampInfoScreen(
-        lamp: melodiLamp,
+      home: CarInfoScreen(
+        car: bmw,
       ),
     );
   }
