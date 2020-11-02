@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ProductFeature extends StatelessWidget {
-  final String iconName;
+class ShowSpecs extends StatelessWidget {
+  final String image, units;
   final num value;
-  final String units;
-  const ProductFeature({
-    @required this.iconName,
-    @required this.value,
+  const ShowSpecs({
+    @required this.image,
     @required this.units,
+    @required this.value,
   });
 
   @override
@@ -23,7 +22,7 @@ class ProductFeature extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset('assets/icons/$iconName.png'),
+          Image.asset('assets/icons/$image.png'),
           Text(
             '$value $units',
             style: TextStyle(

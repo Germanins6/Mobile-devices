@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'screens/lamp_info_screen.dart';
 
 class Specs {
@@ -45,7 +44,7 @@ class LampInfoApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.red,
       ),
       home: CarInfoScreen(
         car: bmw,

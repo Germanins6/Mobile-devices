@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lamp/app.dart';
 import '../app.dart';
 import '../widgets/color_sample.dart';
 import '../widgets/product_feature.dart';
@@ -15,7 +14,7 @@ class CarInfoScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 5, child: _CarPreview(car: bmw)),
+              Expanded(flex: 5, child: _CarPreviewContainer(car: bmw)),
               Expanded(flex: 5, child: _CarInfo(car: bmw)),
             ],
           ),
@@ -90,8 +89,8 @@ class _BackButton extends StatelessWidget {
 }
 
 class _CarInfo extends StatelessWidget {
-  final Car bmw;
-  _CarInfo({this.bmw});
+  final Car car;
+  _CarInfo({this.car});
 
   @override
   Widget build(BuildContext context) {
@@ -102,9 +101,9 @@ class _CarInfo extends StatelessWidget {
         children: [
           _CarName(name: bmw.name),
           SizedBox(height: 6),
-          _CarDescription(descr: bmw.description),
+          _CarDescription(car_review: bmw.description),
           SizedBox(height: 16),
-          _CarSpecs(specs: bmw.car_specs),
+          _CarSpecs(car_specs: bmw.car_specs),
           //Spacer(),
         ],
       ),
@@ -122,8 +121,8 @@ class _CarSpecs extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         for (var feature in car_specs)
-          ProductFeature(
-            iconName: feature.icon,
+          ShowSpecs(
+            image: feature.image,
             units: feature.units,
             value: feature.value,
           ),
@@ -133,12 +132,12 @@ class _CarSpecs extends StatelessWidget {
 }
 
 class _CarDescription extends StatelessWidget {
-  final String review;
-  _CarDescription({this.review});
+  final String car_review;
+  _CarDescription({this.car_review});
   @override
   Widget build(BuildContext context) {
     return Text(
-      review,
+      car_review,
       style: TextStyle(
         color: Colors.grey,
         fontSize: 12,
@@ -196,8 +195,8 @@ class _CarModel extends StatelessWidget {
 }
 
 class _CarPreviewContainer extends StatelessWidget {
-  final Car bmw;
-  _CarPreviewContainer({@required this.bmw});
+  final Car car;
+  _CarPreviewContainer({@required this.car});
 
   @override
   Widget build(BuildContext context) {
