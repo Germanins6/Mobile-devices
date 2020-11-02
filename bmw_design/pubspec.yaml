@@ -1,5 +1,5 @@
-name: lamp
-description: A new Flutter project.
+name: bmw_design
+description: Flutter static screen design project developed for subject Mobile Devices. Universitat Politécnica de Catalunya. Developed by German Insua and Pol Camacho
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -46,7 +46,11 @@ flutter:
 
   assets:
     - assets/icons/
-    - assets/lamp_photo.png
+    - assets/mainImage.jpg
+    - assets/circleImage.jpg
+    - assets/buttonImage.jpg
+    - assets/Button2Image.png
+    - assets/button3Image.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
