@@ -13,7 +13,7 @@ class Car {
   String model;
   String description;
   String photoUrl;
-  List<Specs> car_specs;
+  List<Specs> specs;
 
   Car(
     this.title,
@@ -21,7 +21,7 @@ class Car {
     this.model,
     this.description,
     this.photoUrl,
-    this.car_specs,
+    this.specs,
   );
 }
 
@@ -30,10 +30,10 @@ final bmw = Car(
   'BMW',
   'I8 SHADOW EDITION',
   'Mollit do adipisicing ut qui. Ea ad officia commodo est ea laborum commodo aute non. Adipisicing occaecat adipisicing voluptate sint quis quis eiusmod non officia laboris.',
-  'assets/mainImage.jpg',
+  'assets/headerPic.jpg',
   [
     Specs('buttonImage.jpg', 'KM/H', 60),
-    Specs('Button2Image,png', 'MPH', 175),
+    Specs('Button2Image.png', 'MPH', 175),
     Specs('button3Image.jpg', 'MPH', 175),
   ],
 );
@@ -44,7 +44,7 @@ class LampInfoApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
       home: CarInfoScreen(
         car: bmw,

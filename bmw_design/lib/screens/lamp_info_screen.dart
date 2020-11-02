@@ -14,8 +14,9 @@ class CarInfoScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 5, child: _CarPreviewContainer(car: bmw)),
-              Expanded(flex: 5, child: _CarInfo(car: bmw)),
+              Expanded(flex: 4, child: _CarPreviewContainer(car: bmw)),
+              Expanded(flex: 2, child: _CarInfoTabs(car: bmw)),
+              Expanded(flex: 7, child: _CarInfo(car: bmw)),
             ],
           ),
           SafeArea(
@@ -23,10 +24,6 @@ class CarInfoScreen extends StatelessWidget {
               padding: EdgeInsets.all(8),
               child: BackButton(),
             ),
-          ),
-          Align(
-            alignment: Alignment.topLeft,
-            child: _BackButton(),
           ),
           Align(
             alignment: Alignment.topRight,
@@ -63,26 +60,20 @@ class _MenuButton extends StatelessWidget {
   }
 }
 
-class _BackButton extends StatelessWidget {
+class _CarInfoTabs extends StatelessWidget {
+  final Car car;
+  _CarInfoTabs({this.car});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
-      width: 60,
-      height: 60.0 + 24,
-      child: Stack(
-        children: [
-          Center(
-            child: Icon(Icons.arrow_back),
-          ),
-          Align(
-            alignment: Alignment(.8, -.8),
-            child: Container(
-              width: 9,
-              height: 9,
-            ),
-          ),
-        ],
+      height: 100,
+      decoration: BoxDecoration(
+        color: Color(0xFF1b2139),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
       ),
     );
   }
@@ -94,8 +85,11 @@ class _CarInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(24),
+    return Container(
+      padding: EdgeInsets.all(50),
+      decoration: BoxDecoration(
+        color: Color(0xFF151828),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -103,13 +97,23 @@ class _CarInfo extends StatelessWidget {
           SizedBox(height: 6),
           _CarDescription(car_review: bmw.description),
           SizedBox(height: 16),
-          _CarSpecs(car_specs: bmw.car_specs),
+          _CarSpecs(car_specs: bmw.specs),
           //Spacer(),
         ],
       ),
     );
   }
 }
+
+/*
+Needed later 
+decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(40),
+        ),
+      ),
+*/
 
 class _CarSpecs extends StatelessWidget {
   final List<Specs> car_specs;
@@ -122,7 +126,7 @@ class _CarSpecs extends StatelessWidget {
       children: [
         for (var feature in car_specs)
           ShowSpecs(
-            image: feature.image,
+            //image: feature.image,
             units: feature.units,
             value: feature.value,
           ),
@@ -139,7 +143,7 @@ class _CarDescription extends StatelessWidget {
     return Text(
       car_review,
       style: TextStyle(
-        color: Colors.grey,
+        color: Colors.white,
         fontSize: 12,
       ),
     );
@@ -164,23 +168,13 @@ class _CarName extends StatelessWidget {
         ),
         SizedBox(width: 8),
         Text(
-          'lamp',
+          'Modelo',
           style: TextStyle(
             fontSize: 20,
             fontFamily: 'MontserratAlternates',
           ),
         ),
         Spacer(),
-        FloatingActionButton(
-          backgroundColor: Theme.of(context).primaryColor,
-          mini: true,
-          child: Icon(
-            Icons.favorite,
-            size: 20,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
       ],
     );
   }
@@ -204,7 +198,6 @@ class _CarPreviewContainer extends StatelessWidget {
       child: Column(
         children: [
           _CarPicture(asset: bmw.photoUrl),
-          Spacer(),
         ],
       ),
     );
@@ -218,18 +211,25 @@ class _CarPicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1080,
-      child: Image.asset(asset),
+      height: 275,
+      color: Colors.yellow,
+      child: Image.asset(
+        asset,
+        fit: BoxFit.fill,
+      ),
     );
   }
 }
 
 /*
-Needed later 
-decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(40),
+FloatingActionButton(
+          backgroundColor: Theme.of(context).primaryColor,
+          mini: true,
+          child: Icon(
+            Icons.car_rental,
+            size: 20,
+            color: Colors.white,
+          ),
+          onPressed: () {},
         ),
-      ),
 */

@@ -47,6 +47,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/mainImage.jpg
+    - assets/headerPic.jpg
     - assets/circleImage.jpg
     - assets/buttonImage.jpg
     - assets/Button2Image.png
