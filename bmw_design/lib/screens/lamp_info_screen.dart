@@ -38,38 +38,24 @@ class CarInfoScreen extends StatelessWidget {
   }
 }
 
-/*
-class _ShoppingCartButton extends StatelessWidget {
+
+class _MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 60,
       height: 60.0 + 24,
       padding: EdgeInsets.fromLTRB(14, 14 + 24.0, 14, 14),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(28),
-        ),
-      ),
       child: Stack(
         children: [
           Center(
-            child: Icon(Icons.shopping_cart),
+            child: Icon(Icons.menu),
           ),
           Align(
             alignment: Alignment(.8, -.8),
             child: Container(
               width: 9,
               height: 9,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.amber,
-                border: Border.all(
-                  color: Colors.white,
-                  width: 1,
-                ),
-              ),
             ),
           ),
         ],
@@ -78,27 +64,28 @@ class _ShoppingCartButton extends StatelessWidget {
   }
 }
 
-class _AddToCart extends StatelessWidget {
+class _BackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 140,
-      height: 56,
-      decoration: BoxDecoration(
-        color: Colors.amber,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24),
+      width: 60,
+      height: 60.0 + 24,
+      child: Stack(
+        children: [
+          Center(
+            child: Icon(Icons.arrow_back),
+          ),
+          Align(
+            alignment: Alignment(.8, -.8),
+            child: Container(
+              width: 9,
+              height: 9,
+              ),
+          ),
+        ],
         ),
-      ),
-      child: Text(
-        'Add to cart',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 12,
-        ),
-      ),
-    );
+      );
   }
 }
 
