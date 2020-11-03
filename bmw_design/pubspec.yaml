@@ -66,6 +66,7 @@ flutter:
       fonts:
         - asset: assets/fonts/MontserratAlternates-Regular.ttf
         - asset: assets/fonts/MontserratAlternates-Bold.ttf
+        - asset: assets/fonts/PantonDemo-Light.otf
           weight: 700
 
   #   - family: Trajan Pro

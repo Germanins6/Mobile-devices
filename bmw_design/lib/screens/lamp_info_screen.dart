@@ -89,8 +89,10 @@ class _CarInfoTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextStyle style = TextStyle(
-      fontSize: 20,
+      fontSize: 14,
       fontWeight: FontWeight.normal,
+      fontFamily: 'PantonDemo-Light',
+      color: Colors.white,
     );
 
     return Column(
@@ -99,10 +101,10 @@ class _CarInfoTabs extends StatelessWidget {
         Container(
           child: Row(
             children: [
-              Text('Design', style: style),
-              Text('Spec', style: style),
-              Text('History', style: style),
-              Text('Hire', style: style),
+              Text('DESIGN', style: style),
+              Text('SPEC', style: style),
+              Text('HISTORY', style: style),
+              Text('HIRE', style: style),
             ],
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.max,
@@ -110,8 +112,7 @@ class _CarInfoTabs extends StatelessWidget {
           ),
           height: 45,
           decoration: BoxDecoration(
-            color: Colors.yellow,
-            //color: Color(0xFF1b2139),
+            color: Color(0xFF1b2139),
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(25),
             ),
