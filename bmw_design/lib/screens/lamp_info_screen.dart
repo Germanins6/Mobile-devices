@@ -16,7 +16,7 @@ class CarInfoScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 4, child: _CarPreviewContainer(car: bmw)),
+              Expanded(flex: 5, child: _CarPreviewContainer(car: bmw)),
               Expanded(flex: 6, child: _CarInfo(car: bmw)),
             ],
           ),
@@ -88,13 +88,20 @@ class _CarInfoTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(30),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Color(0xFF1b2139),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          height: 45,
+          decoration: BoxDecoration(
+            color: Colors.yellow,
+            //color: Color(0xFF1b2139),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(25),
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
@@ -208,14 +215,6 @@ class _CarName extends StatelessWidget {
   }
 }
 
-//Still developing widget
-class _CarModel extends StatelessWidget {
-  final String model;
-  _CarModel({this.model});
-
-  Widget build(BuildContext context) {}
-}
-
 class _CarPreviewContainer extends StatelessWidget {
   final Car car;
   _CarPreviewContainer({@required this.car});
@@ -224,12 +223,9 @@ class _CarPreviewContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Stack(
-        children: [
-          Column(
-            children: [
-              _CarPicture(car: bmw),
-            ],
-          ),
+        children: <Widget>[
+          _CarPicture(car: bmw),
+          _CarInfoTabs(),
         ],
       ),
     );
@@ -243,9 +239,10 @@ class _CarPicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topCenter,
       child: Image.asset(
         bmw.photoUrl,
-        fit: BoxFit.fitWidth,
+        fit: BoxFit.fill,
       ),
     );
   }
