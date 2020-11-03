@@ -114,7 +114,7 @@ class _CarInfoBody extends StatelessWidget {
         children: [
           _CarName(name: bmw.name),
           SizedBox(height: 6),
-          _CarDescription(car_review: bmw.description),
+          _CarDescription(description: bmw.description),
           SizedBox(height: 16),
           _CarSpecs(car_specs: bmw.specs),
           //Spacer(),
@@ -163,12 +163,12 @@ class _CarSpecs extends StatelessWidget {
 }
 
 class _CarDescription extends StatelessWidget {
-  final String car_review;
-  _CarDescription({this.car_review});
+  final String description;
+  _CarDescription({this.description});
   @override
   Widget build(BuildContext context) {
     return Text(
-      car_review,
+      description,
       style: TextStyle(
         color: Colors.white,
         fontSize: 12,

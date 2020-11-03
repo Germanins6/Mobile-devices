@@ -45,13 +45,10 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/icons/
-    - assets/mainImage.jpg
-    - assets/headerPic.jpg
-    - assets/circleImage.jpg
-    - assets/buttonImage.jpg
-    - assets/Button2Image.png
-    - assets/button3Image.jpg
+       - assets/icons/
+       - assets/headerPic.jpg
+       - assets/buttons/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
