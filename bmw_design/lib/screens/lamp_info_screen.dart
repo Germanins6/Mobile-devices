@@ -11,7 +11,7 @@ class CarInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1b2139),
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
           Column(
@@ -46,7 +46,7 @@ class _MenuButton extends StatelessWidget {
       child: Stack(
         children: [
           Center(
-            child: Icon(Icons.menu),
+            child: Icon(Icons.drag_handle_rounded),
           ),
           Align(
             alignment: Alignment(.8, -.8),
@@ -158,11 +158,54 @@ class _CarInfoBottom extends StatelessWidget {
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Color(0xFF1b2139),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+        borderRadius: BorderRadius.all(
+          Radius.circular(50),
         ),
       ),
+      child: _BottomIcons(),
+    );
+  }
+}
+
+class _BottomIcons extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        //Icon 1
+        Icon(
+          Icons.border_all_rounded,
+          color: Colors.white,
+        ),
+        //Icon 2
+        Icon(
+          Icons.favorite_border_rounded,
+          color: Colors.white,
+        ),
+        //MiddleButton
+        FloatingActionButton(
+          backgroundColor: Colors.red,
+          child: Icon(
+            Icons.car_repair,
+            size: 20,
+            color: Colors.white,
+          ),
+          onPressed: () {},
+        ),
+        //Icon 3
+        Icon(
+          Icons.search_rounded,
+          color: Colors.white,
+        ),
+        //Icon 4
+        Icon(
+          Icons.account_circle_sharp,
+          color: Colors.white,
+        ),
+      ],
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
     );
   }
 }
@@ -264,16 +307,3 @@ class _CarPicture extends StatelessWidget {
     );
   }
 }
-
-/*
-FloatingActionButton(
-          backgroundColor: Theme.of(context).primaryColor,
-          mini: true,
-          child: Icon(
-            Icons.car_rental,
-            size: 20,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
-*/
