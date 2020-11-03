@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import '../app.dart';
 import '../widgets/color_sample.dart';
 import '../widgets/product_feature.dart';
@@ -15,8 +16,7 @@ class CarInfoScreen extends StatelessWidget {
           Column(
             children: [
               Expanded(flex: 4, child: _CarPreviewContainer(car: bmw)),
-              Expanded(flex: 2, child: _CarInfoTabs(car: bmw)),
-              Expanded(flex: 7, child: _CarInfo(car: bmw)),
+              Expanded(flex: 6, child: _CarInfo(car: bmw)),
             ],
           ),
           SafeArea(
@@ -60,28 +60,47 @@ class _MenuButton extends StatelessWidget {
   }
 }
 
+class _CarInfo extends StatelessWidget {
+  final Car car;
+  _CarInfo({this.car});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Stack(
+      children: [
+        Column(
+          children: [
+            Expanded(flex: 1, child: _CarInfoTabs(car: bmw)),
+            Expanded(flex: 8, child: _CarInfoBody(car: bmw)),
+            Expanded(flex: 1, child: _CarInfoBottom()),
+          ],
+        )
+      ],
+    ));
+  }
+}
+
 class _CarInfoTabs extends StatelessWidget {
   final Car car;
   _CarInfoTabs({this.car});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      decoration: BoxDecoration(
-        color: Color(0xFF1b2139),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(0xFF1b2139),
         ),
       ),
     );
   }
 }
 
-class _CarInfo extends StatelessWidget {
+class _CarInfoBody extends StatelessWidget {
   final Car car;
-  _CarInfo({this.car});
+  _CarInfoBody({this.car});
 
   @override
   Widget build(BuildContext context) {
@@ -105,15 +124,23 @@ class _CarInfo extends StatelessWidget {
   }
 }
 
-/*
-Needed later 
-decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+class _CarInfoBottom extends StatelessWidget {
+  _CarInfoBottom();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Color(0xFF1b2139),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(40),
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
         ),
       ),
-*/
+    );
+  }
+}
 
 class _CarSpecs extends StatelessWidget {
   final List<Specs> car_specs;
@@ -195,26 +222,8 @@ class _CarPreviewContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        children: [
-          _CarPicture(asset: bmw.photoUrl),
-        ],
-      ),
-    );
-  }
-}
-
-class _CarPicture extends StatelessWidget {
-  final String asset;
-  _CarPicture({this.asset});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 275,
-      color: Colors.yellow,
-      child: Image.asset(
-        asset,
+      child: FittedBox(
+        child: Image.asset(bmw.photoUrl),
         fit: BoxFit.fill,
       ),
     );
