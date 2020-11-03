@@ -11,6 +11,7 @@ class CarInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF1b2139),
       body: Stack(
         children: [
           Column(
@@ -71,7 +72,7 @@ class _CarInfo extends StatelessWidget {
       children: [
         Column(
           children: [
-            Expanded(flex: 1, child: _CarInfoTabs(car: bmw)),
+            // Expanded(flex: 1, child: _CarInfoTabs(car: bmw)),
             Expanded(flex: 8, child: _CarInfoBody(car: bmw)),
             Expanded(flex: 1, child: _CarInfoBottom()),
           ],
@@ -153,7 +154,7 @@ class _CarSpecs extends StatelessWidget {
       children: [
         for (var feature in car_specs)
           ShowSpecs(
-            //image: feature.image,
+            image: feature.image,
             units: feature.units,
             value: feature.value,
           ),
@@ -222,9 +223,29 @@ class _CarPreviewContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FittedBox(
-        child: Image.asset(bmw.photoUrl),
-        fit: BoxFit.fill,
+      child: Stack(
+        children: [
+          Column(
+            children: [
+              _CarPicture(car: bmw),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _CarPicture extends StatelessWidget {
+  final Car car;
+  _CarPicture({this.car});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Image.asset(
+        bmw.photoUrl,
+        fit: BoxFit.fitWidth,
       ),
     );
   }

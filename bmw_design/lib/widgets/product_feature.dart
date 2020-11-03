@@ -22,7 +22,7 @@ class ShowSpecs extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset('assets/buttons/$image.png'),
+          Image.asset('assets/buttons/$image'),
           Text(
             '$value $units',
             style: TextStyle(
