@@ -89,7 +89,7 @@ class _CarInfoTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextStyle style = TextStyle(
-      fontSize: 14,
+      fontSize: 10,
       fontWeight: FontWeight.normal,
       fontFamily: 'PantonDemo-Light',
       color: Colors.white,
