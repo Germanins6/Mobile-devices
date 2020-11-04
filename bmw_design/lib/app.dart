@@ -29,7 +29,12 @@ final bmw = Car(
   'YOUR VISION IS OUR NEXT INVETION',
   'BMW',
   'I8 SHADOW EDITION',
-  'Mollit do adipisicing ut qui. Ea ad officia commodo est ea laborum commodo aute non. Adipisicing occaecat adipisicing voluptate sint quis quis eiusmod non officia laboris.',
+  'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT,'
+      'SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA '
+      'ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION '
+      'ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT. DUIS'
+      'AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM'
+      'DOLORE EU FUGIAT NULLA PARIATUR.',
   'assets/headerPic.jpg',
   [
     Specs('buttonImage.jpg', 'KM/H', 60),
@@ -38,7 +43,7 @@ final bmw = Car(
   ],
 );
 
-class LampInfoApp extends StatelessWidget {
+class CarInfoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../app.dart';
-import '../widgets/color_sample.dart';
 import '../widgets/product_feature.dart';
 
 class CarInfoScreen extends StatelessWidget {
@@ -137,12 +136,17 @@ class _CarInfoBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          _CarName(name: bmw.name),
-          SizedBox(height: 6),
-          _CarDescription(description: bmw.description),
-          SizedBox(height: 16),
-          _CarSpecs(car_specs: bmw.specs),
-          //Spacer(),
+          _CarName(
+            name: bmw.name,
+          ),
+          SizedBox(height: 150),
+          _CarDescription(
+            description: bmw.description,
+          ),
+          SizedBox(height: 20),
+          _CarSpecs(
+            car_specs: bmw.specs,
+          ),
         ],
       ),
     );
@@ -238,8 +242,13 @@ class _CarDescription extends StatelessWidget {
     return Text(
       description,
       style: TextStyle(
+        height: 3,
         color: Colors.white,
-        fontSize: 12,
+        fontFamily: "PantonDemo-Light",
+        fontWeight: FontWeight.normal,
+        fontSize: 10,
+        wordSpacing: 4,
+        letterSpacing: 1,
       ),
     );
   }
@@ -256,6 +265,7 @@ class _CarName extends StatelessWidget {
         Text(
           name,
           style: TextStyle(
+            color: Colors.white,
             fontSize: 20,
             fontFamily: 'MontserratAlternates',
             fontWeight: FontWeight.bold,
