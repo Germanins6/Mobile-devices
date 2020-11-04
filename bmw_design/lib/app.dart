@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/lamp_info_screen.dart';
+import 'screens/car_info_screen.dart';
 
 class Specs {
   String image, units;
@@ -26,10 +26,10 @@ class Car {
 }
 
 final bmw = Car(
-  'YOUR VISION IS OUR NEXT INVETION',
+  'YOUR VISION',
   'BMW',
   'I8 SHADOW EDITION',
-  'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT,'
+  'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, '
       'SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA '
       'ALIQUA. UT ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION '
       'ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT. DUIS'

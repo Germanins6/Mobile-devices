@@ -137,7 +137,7 @@ class _CarInfoBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _CarName(
-            name: bmw.name,
+            title: bmw.title,
           ),
           SizedBox(height: 150),
           _CarDescription(
@@ -255,28 +255,34 @@ class _CarDescription extends StatelessWidget {
 }
 
 class _CarName extends StatelessWidget {
-  final String name;
-  _CarName({this.name});
+  final String title;
+  _CarName({this.title});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
-          name,
+          title,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 20,
-            fontFamily: 'MontserratAlternates',
+            fontFamily: 'AdventPro-Thin',
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(width: 8),
+        SizedBox(
+          width: 18,
+          height: 30,
+        ),
+        Spacer(),
         Text(
-          'Modelo',
+          'IS OUR NEXT INVENTION',
           style: TextStyle(
+            color: Colors.white,
             fontSize: 20,
-            fontFamily: 'MontserratAlternates',
+            fontFamily: 'AdventPro-Thin',
+            fontWeight: FontWeight.normal,
           ),
         ),
         Spacer(),
