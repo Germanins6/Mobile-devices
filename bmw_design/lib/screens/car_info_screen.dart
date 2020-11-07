@@ -15,8 +15,14 @@ class CarInfoScreen extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 5, child: _CarPreviewContainer(car: bmw)),
-              Expanded(flex: 6, child: _CarInfo(car: bmw)),
+              Expanded(
+                flex: 5,
+                child: _CarPreviewContainer(car: bmw),
+              ),
+              Expanded(
+                flex: 6,
+                child: _CarInfo(car: bmw),
+              ),
             ],
           ),
           SafeArea(
@@ -67,18 +73,19 @@ class _CarInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF151828),
-        body: Stack(
-          children: [
-            Column(
-              children: [
-                // Expanded(flex: 1, child: _CarInfoTabs(car: bmw)),
-                Expanded(flex: 8, child: _CarInfoBody(car: bmw)),
-                Expanded(flex: 1, child: _CarInfoBottom()),
-              ],
-            )
-          ],
-        ));
+      backgroundColor: Color(0xFF151828),
+      body: Stack(
+        children: [
+          Column(
+            children: [
+              Expanded(flex: 2, child: _CarInfoTitle(car: bmw)),
+              Expanded(flex: 7, child: _CarInfoBody(car: bmw)),
+              Expanded(flex: 1, child: _CarInfoBottom()),
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -91,7 +98,7 @@ class _CarInfoTabs extends StatelessWidget {
     final TextStyle style = TextStyle(
       fontSize: 10,
       fontWeight: FontWeight.normal,
-      fontFamily: 'PantonDemo-Light',
+      fontFamily: 'ArchivoNarrow',
       color: Colors.white,
     );
 
@@ -123,6 +130,44 @@ class _CarInfoTabs extends StatelessWidget {
   }
 }
 
+class _CarInfoTitle extends StatelessWidget {
+  final Car car;
+  _CarInfoTitle({this.car});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        left: 30,
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            car.title,
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'AdventPro',
+              fontStyle: FontStyle.normal,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            'IS OUR NEXT INVENTION',
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'AdventPro',
+              fontSize: 30,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _CarInfoBody extends StatelessWidget {
   final Car car;
   _CarInfoBody({this.car});
@@ -138,9 +183,10 @@ class _CarInfoBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _CarName(
-            title: bmw.title,
+            name: bmw.name,
+            model: bmw.model,
           ),
-          SizedBox(height: 150),
+          SizedBox(height: 50),
           _CarDescription(
             description: bmw.description,
           ),
@@ -245,48 +291,45 @@ class _CarDescription extends StatelessWidget {
       style: TextStyle(
         height: 3,
         color: Colors.white,
-        fontFamily: "PantonDemo-Light",
+        fontFamily: "ArchivoNarrow",
         fontWeight: FontWeight.normal,
-        fontSize: 10,
-        wordSpacing: 4,
-        letterSpacing: 1,
+        fontSize: 12,
       ),
     );
   }
 }
 
 class _CarName extends StatelessWidget {
-  final String title;
-  _CarName({this.title});
-
+  final String name;
+  final String model;
+  _CarName({this.name, this.model});
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Text(
-          title,
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'AdventPro-Thin',
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
-          ),
+        Row(
+          children: [
+            Text(
+              name,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'AdventPro',
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              model,
+              textAlign: TextAlign.end,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 22,
+                fontFamily: 'AdventPro',
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ],
         ),
-        SizedBox(
-          width: 18,
-          height: 30,
-        ),
-        Spacer(),
-        Text(
-          'IS OUR NEXT INVENTION',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontFamily: 'AdventPro-Thin',
-            fontWeight: FontWeight.normal,
-          ),
-        ),
-        Spacer(),
       ],
     );
   }

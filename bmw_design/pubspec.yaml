@@ -62,15 +62,16 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: PantonDemo
-      fonts:
+      - family: PantonDemo
+        fonts:
         - asset: assets/fonts/PantonDemo-Light.otf
-          weight: 700
-    - family: AdventPro
-      fonts: 
-        - asset: assets/fonts/AdventPro-Thin.ttf
-          weight: 700
-
+      - family: AdventPro
+        fonts: 
+        - asset: assets/fonts/AdventPro-Light.ttf
+        - asset: assets/fonts/AdventPro-Medium.ttf
+      - family: ArchivoNarrow
+        fonts: 
+        - asset: assets/fonts/ArchivoNarrow-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
