@@ -67,17 +67,18 @@ class _CarInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xFF151828),
         body: Stack(
-      children: [
-        Column(
           children: [
-            // Expanded(flex: 1, child: _CarInfoTabs(car: bmw)),
-            Expanded(flex: 8, child: _CarInfoBody(car: bmw)),
-            Expanded(flex: 1, child: _CarInfoBottom()),
+            Column(
+              children: [
+                // Expanded(flex: 1, child: _CarInfoTabs(car: bmw)),
+                Expanded(flex: 8, child: _CarInfoBody(car: bmw)),
+                Expanded(flex: 1, child: _CarInfoBottom()),
+              ],
+            )
           ],
-        )
-      ],
-    ));
+        ));
   }
 }
 
@@ -318,7 +319,8 @@ class _CarPicture extends StatelessWidget {
       alignment: Alignment.topCenter,
       child: Image.asset(
         bmw.photoUrl,
-        fit: BoxFit.fill,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
       ),
     );
   }
