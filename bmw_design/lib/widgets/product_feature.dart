@@ -15,7 +15,7 @@ class ShowSpecs extends StatelessWidget {
       width: 56,
       height: 56,
       decoration: BoxDecoration(
-        color: Colors.grey[300],
+        //color: Colors.grey[300],
         borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       padding: EdgeInsets.all(8),

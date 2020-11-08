@@ -65,13 +65,15 @@ flutter:
       - family: PantonDemo
         fonts:
         - asset: assets/fonts/PantonDemo-Light.otf
-      - family: AdventPro
+      - family: AdventProL
         fonts: 
         - asset: assets/fonts/AdventPro-Light.ttf
-        - asset: assets/fonts/AdventPro-Medium.ttf
-      - family: ArchivoNarrow
+      - family: AdventProM
         fonts: 
-        - asset: assets/fonts/ArchivoNarrow-Regular.ttf
+        - asset: assets/fonts/AdventPro-Medium.ttf
+      - family: Archivo
+        fonts: 
+        - asset: assets/fonts/Archivo-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

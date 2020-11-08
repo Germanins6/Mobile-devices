@@ -137,8 +137,8 @@ class _CarInfoTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        left: 30,
-        top: 30,
+        left: 40,
+        top: 40,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -146,18 +146,17 @@ class _CarInfoTitle extends StatelessWidget {
           Text(
             car.title,
             style: TextStyle(
+              fontFamily: 'AdventProM',
               color: Colors.white,
-              fontFamily: 'AdventPro',
-              fontStyle: FontStyle.normal,
-              fontSize: 30,
               fontWeight: FontWeight.bold,
+              fontSize: 30,
             ),
           ),
           Text(
             'IS OUR NEXT INVENTION',
             style: TextStyle(
+              fontFamily: 'AdventProL',
               color: Colors.white,
-              fontFamily: 'AdventPro',
               fontSize: 30,
               fontWeight: FontWeight.normal,
             ),
@@ -309,23 +308,41 @@ class _CarName extends StatelessWidget {
       children: [
         Row(
           children: [
+            Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage('assets/buttons/circleImage.jpg'),
+                ),
+                border: Border.all(
+                  color: Colors.red,
+                  width: 1,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
             Text(
               name,
               style: TextStyle(
+                fontFamily: 'AdventProM',
+                fontWeight: FontWeight.normal,
                 color: Colors.white,
-                fontFamily: 'AdventPro',
                 fontSize: 22,
-                fontWeight: FontWeight.bold,
               ),
             ),
             Text(
               model,
               textAlign: TextAlign.end,
               style: TextStyle(
+                fontFamily: 'AdventProL',
+                fontWeight: FontWeight.normal,
                 color: Colors.white,
                 fontSize: 22,
-                fontFamily: 'AdventPro',
-                fontWeight: FontWeight.normal,
               ),
             ),
           ],
@@ -364,6 +381,7 @@ class _CarPicture extends StatelessWidget {
         bmw.photoUrl,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
+        fit: BoxFit.cover,
       ),
     );
   }
