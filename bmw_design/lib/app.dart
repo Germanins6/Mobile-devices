@@ -13,7 +13,7 @@ class Car {
   String model;
   String description;
   String photoUrl;
-  List<Specs> specs;
+  List<Specs> carSpecs;
 
   Car(
     this.title,
@@ -21,7 +21,7 @@ class Car {
     this.model,
     this.description,
     this.photoUrl,
-    this.specs,
+    this.carSpecs,
   );
 }
 

@@ -12,26 +12,29 @@ class ShowSpecs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 56,
-      height: 56,
+      width: 150,
+      height: 100,
       decoration: BoxDecoration(
-        //color: Colors.grey[300],
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        color: Colors.grey,
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage('assets/buttons/circleImage.jpg'),
+        ),
+        border: Border.all(
+          color: Colors.red,
+        ),
+        borderRadius: BorderRadius.all(
+          Radius.circular(16),
+        ),
       ),
       padding: EdgeInsets.all(8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset('assets/buttons/$image'),
-          Text(
-            '$value $units',
-            style: TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ],
-      ),
+      // Text(
+      //   '$value $units',
+      //   style: TextStyle(
+      //     fontSize: 10,
+      //     fontWeight: FontWeight.bold,
+      //   ),
+      // ),
     );
   }
 }

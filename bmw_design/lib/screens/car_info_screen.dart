@@ -4,8 +4,8 @@ import '../app.dart';
 import '../widgets/product_feature.dart';
 
 class CarInfoScreen extends StatelessWidget {
-  final Car bmw;
-  CarInfoScreen({@required this.bmw, Car car});
+  final Car car;
+  CarInfoScreen({@required this.car});
 
   @override
   Widget build(BuildContext context) {
@@ -78,9 +78,9 @@ class _CarInfo extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 2, child: _CarInfoTitle(car: bmw)),
-              Expanded(flex: 7, child: _CarInfoBody(car: bmw)),
-              Expanded(flex: 1, child: _CarInfoBottom()),
+              Expanded(flex: 1, child: _CarInfoTitle(car: bmw)),
+              Expanded(flex: 3, child: _CarInfoBody(car: bmw)),
+              Expanded(flex: 1, child: _CarInfoBottom(car: bmw)),
             ],
           )
         ],
@@ -108,10 +108,22 @@ class _CarInfoTabs extends StatelessWidget {
         Container(
           child: Row(
             children: [
-              Text('DESIGN', style: style),
-              Text('SPEC', style: style),
-              Text('HISTORY', style: style),
-              Text('HIRE', style: style),
+              Text(
+                'DESIGN',
+                style: style,
+              ),
+              Text(
+                'SPEC',
+                style: style,
+              ),
+              Text(
+                'HISTORY',
+                style: style,
+              ),
+              Text(
+                'HIRE',
+                style: style,
+              ),
             ],
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.max,
@@ -137,8 +149,8 @@ class _CarInfoTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        left: 40,
-        top: 40,
+        left: 30,
+        top: 30,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -174,7 +186,11 @@ class _CarInfoBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(50),
+      padding: EdgeInsets.only(
+        left: 45,
+        right: 45,
+        top: 20,
+      ),
       decoration: BoxDecoration(
         color: Color(0xFF151828),
       ),
@@ -185,13 +201,9 @@ class _CarInfoBody extends StatelessWidget {
             name: bmw.name,
             model: bmw.model,
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 40),
           _CarDescription(
             description: bmw.description,
-          ),
-          SizedBox(height: 20),
-          _CarSpecs(
-            car_specs: bmw.specs,
           ),
         ],
       ),
@@ -200,19 +212,30 @@ class _CarInfoBody extends StatelessWidget {
 }
 
 class _CarInfoBottom extends StatelessWidget {
-  _CarInfoBottom();
+  final Car car;
+  _CarInfoBottom({this.car});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Color(0xFF1b2139),
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
+    return Stack(
+      children: <Widget>[
+        Container(
+          child: _CarSpecs(
+            carSpecs: car.carSpecs,
+          ),
         ),
-      ),
-      child: _BottomIcons(),
+        // Container(
+        //   //padding: EdgeInsets.only(bottom: 30),
+        //   alignment: Alignment.bottomCenter,
+        //   decoration: BoxDecoration(
+        //     color: Color(0xFF1b2139),
+        //     borderRadius: BorderRadius.all(
+        //       Radius.circular(50),
+        //     ),
+        //   ),
+        //   child: _BottomIcons(),
+        // )
+      ],
     );
   }
 }
@@ -261,15 +284,15 @@ class _BottomIcons extends StatelessWidget {
 }
 
 class _CarSpecs extends StatelessWidget {
-  final List<Specs> car_specs;
-  _CarSpecs({this.car_specs});
+  final List<Specs> carSpecs;
+  _CarSpecs({this.carSpecs});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        for (var feature in car_specs)
+        for (var feature in carSpecs)
           ShowSpecs(
             image: feature.image,
             units: feature.units,
@@ -314,7 +337,8 @@ class _CarName extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
+                  alignment: Alignment(-1, 0),
                   image: AssetImage('assets/buttons/circleImage.jpg'),
                 ),
                 border: Border.all(
