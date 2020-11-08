@@ -98,7 +98,7 @@ class _CarInfoTabs extends StatelessWidget {
     final TextStyle style = TextStyle(
       fontSize: 10,
       fontWeight: FontWeight.normal,
-      fontFamily: 'ArchivoNarrow',
+      fontFamily: 'Archivo',
       color: Colors.white,
     );
 
@@ -224,17 +224,17 @@ class _CarInfoBottom extends StatelessWidget {
             carSpecs: car.carSpecs,
           ),
         ),
-        // Container(
-        //   //padding: EdgeInsets.only(bottom: 30),
-        //   alignment: Alignment.bottomCenter,
-        //   decoration: BoxDecoration(
-        //     color: Color(0xFF1b2139),
-        //     borderRadius: BorderRadius.all(
-        //       Radius.circular(50),
-        //     ),
-        //   ),
-        //   child: _BottomIcons(),
-        // )
+        Container(
+          padding: EdgeInsets.only(bottom: 30),
+          alignment: Alignment.bottomCenter,
+          decoration: BoxDecoration(
+            color: Color(0xFF1b2139),
+            borderRadius: BorderRadius.all(
+              Radius.circular(50),
+            ),
+          ),
+          child: _BottomIcons(),
+        )
       ],
     );
   }
@@ -313,7 +313,7 @@ class _CarDescription extends StatelessWidget {
       style: TextStyle(
         height: 3,
         color: Colors.white,
-        fontFamily: "ArchivoNarrow",
+        fontFamily: "Archivo",
         fontWeight: FontWeight.normal,
         fontSize: 12,
       ),

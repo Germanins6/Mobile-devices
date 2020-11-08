@@ -35,7 +35,7 @@ final bmw = Car(
       'ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO CONSEQUAT.',
   'assets/headerPic.jpg',
   [
-    Specs('buttonImage.jpg', 'KM/H', 60),
+    Specs('buttonImage.jpg', 'KM/H', 0 - 60),
     Specs('Button2Image.png', 'MPH', 175),
     Specs('button3Image.jpg', 'MPH', 175),
   ],

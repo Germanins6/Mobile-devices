@@ -11,37 +11,46 @@ class ShowSpecs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 150,
-      height: 100,
-      decoration: BoxDecoration(
-          border: Border.all(color: Colors.red),
-          borderRadius: BorderRadius.all(
-            Radius.circular(16),
-          )),
-
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(
-          Radius.circular(16),
+    return Stack(
+      children: <Widget>[
+        Container(
+          width: 150,
+          height: 100,
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.red),
+            borderRadius: BorderRadius.all(
+              Radius.circular(16),
+            ),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(
+              Radius.circular(16),
+            ),
+            child: Image.asset(
+              'assets/buttons/$image',
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
-        child: Image.asset(
-          'assets/buttons/$image',
-          fit: BoxFit.cover,
-        ),
-      ),
-      // child: Image.asset(
-      //   'assets/buttons/$image',
-      //   fit: BoxFit.cover,
-      //   alignment: Alignment.center,
-      // ),
-
-      // Text(
-      //   '$value $units',
-      //   style: TextStyle(
-      //     fontSize: 10,
-      //     fontWeight: FontWeight.bold,
-      //   ),
-      // ),
+        Container(
+          width: 150,
+          height: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '$value $units',
+                style: TextStyle(
+                  fontFamily: 'Archivo',
+                  fontWeight: FontWeight.normal,
+                  fontSize: 30,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }
