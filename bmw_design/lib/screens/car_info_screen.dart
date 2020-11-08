@@ -224,17 +224,7 @@ class _CarInfoBottom extends StatelessWidget {
             carSpecs: car.carSpecs,
           ),
         ),
-        Container(
-          padding: EdgeInsets.only(bottom: 30),
-          alignment: Alignment.bottomCenter,
-          decoration: BoxDecoration(
-            color: Color(0xFF1b2139),
-            borderRadius: BorderRadius.all(
-              Radius.circular(50),
-            ),
-          ),
-          child: _BottomIcons(),
-        )
+        _BottomIcons(),
       ],
     );
   }
@@ -243,42 +233,53 @@ class _CarInfoBottom extends StatelessWidget {
 class _BottomIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        //Icon 1
-        Icon(
-          Icons.border_all_rounded,
-          color: Colors.white,
+    return Container(
+      height: 60,
+      padding: EdgeInsets.all(10),
+      alignment: Alignment.bottomCenter,
+      decoration: BoxDecoration(
+        color: Color(0xFF1b2139),
+        borderRadius: BorderRadius.all(
+          Radius.circular(50),
         ),
-        //Icon 2
-        Icon(
-          Icons.favorite_border_rounded,
-          color: Colors.white,
-        ),
-        //MiddleButton
-        FloatingActionButton(
-          backgroundColor: Colors.red,
-          child: Icon(
-            Icons.car_repair,
-            size: 20,
+      ),
+      child: Row(
+        children: [
+          //Icon 1
+          Icon(
+            Icons.border_all_rounded,
             color: Colors.white,
           ),
-          onPressed: () {},
-        ),
-        //Icon 3
-        Icon(
-          Icons.search_rounded,
-          color: Colors.white,
-        ),
-        //Icon 4
-        Icon(
-          Icons.account_circle_sharp,
-          color: Colors.white,
-        ),
-      ],
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      mainAxisSize: MainAxisSize.max,
-      crossAxisAlignment: CrossAxisAlignment.center,
+          //Icon 2
+          Icon(
+            Icons.favorite_border_rounded,
+            color: Colors.white,
+          ),
+          //MiddleButton
+          FloatingActionButton(
+            backgroundColor: Colors.red,
+            child: Icon(
+              Icons.car_repair,
+              size: 20,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
+          //Icon 3
+          Icon(
+            Icons.search_rounded,
+            color: Colors.white,
+          ),
+          //Icon 4
+          Icon(
+            Icons.account_circle_sharp,
+            color: Colors.white,
+          ),
+        ],
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.end,
+      ),
     );
   }
 }
