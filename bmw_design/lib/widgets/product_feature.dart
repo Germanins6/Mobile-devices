@@ -15,19 +15,26 @@ class ShowSpecs extends StatelessWidget {
       width: 150,
       height: 100,
       decoration: BoxDecoration(
-        color: Colors.grey,
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage('assets/buttons/circleImage.jpg'),
-        ),
-        border: Border.all(
-          color: Colors.red,
-        ),
+          border: Border.all(color: Colors.red),
+          borderRadius: BorderRadius.all(
+            Radius.circular(16),
+          )),
+
+      child: ClipRRect(
         borderRadius: BorderRadius.all(
           Radius.circular(16),
         ),
+        child: Image.asset(
+          'assets/buttons/$image',
+          fit: BoxFit.cover,
+        ),
       ),
-      padding: EdgeInsets.all(8),
+      // child: Image.asset(
+      //   'assets/buttons/$image',
+      //   fit: BoxFit.cover,
+      //   alignment: Alignment.center,
+      // ),
+
       // Text(
       //   '$value $units',
       //   style: TextStyle(
