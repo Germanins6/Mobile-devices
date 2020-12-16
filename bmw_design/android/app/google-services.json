@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "305353123739",
+    "project_id": "carappdispositius",
+    "storage_bucket": "carappdispositius.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305353123739:android:8ef0f6c6e24ab5b1f7e33e",
+        "android_client_info": {
+          "package_name": "com.example.lamp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305353123739-k7fuit8f5tmb3urjokub1u7klcrhou47.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP6JUqeshZlIPXcbdIH590fVzINfsPImc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305353123739-k7fuit8f5tmb3urjokub1u7klcrhou47.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

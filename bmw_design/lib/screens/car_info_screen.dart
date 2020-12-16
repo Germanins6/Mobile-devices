@@ -253,28 +253,18 @@ class _BottomIcons extends StatelessWidget {
       children: [
         //Icon 1
         Icon(
-          Icons.border_all_rounded,
-          color: Colors.white,
-        ),
-        //Icon 2
-        Icon(
-          Icons.favorite_border_rounded,
+          Icons.arrow_back,
           color: Colors.white,
         ),
         //MiddleButton
         FloatingActionButton(
           backgroundColor: Colors.red,
           child: Icon(
-            Icons.car_repair,
+            Icons.add_shopping_cart,
             size: 20,
             color: Colors.white,
           ),
           onPressed: () {},
-        ),
-        //Icon 3
-        Icon(
-          Icons.search_rounded,
-          color: Colors.white,
         ),
         //Icon 4
         Icon(
