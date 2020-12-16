@@ -260,7 +260,7 @@ class _BottomIcons extends StatelessWidget {
         FloatingActionButton(
           backgroundColor: Colors.red,
           child: Icon(
-            Icons.add_shopping_cart,
+            Icons.add_shopping_cart_rounded,
             size: 20,
             color: Colors.white,
           ),
