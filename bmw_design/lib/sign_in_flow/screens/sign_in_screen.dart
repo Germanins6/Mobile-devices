@@ -81,88 +81,128 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(32),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(height: 50),
-              Text(
-                'Sign In',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Theme.of(context).primaryColor,
-                ),
+      body: Stack(children: [
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [Color(0xFF26203E), Color(0xFF413972)],
               ),
-              SizedBox(height: 30),
-              TextField(
-                controller: _email,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(3)),
-                  ),
-                  labelText: 'Email',
-                ),
-                keyboardType: TextInputType.emailAddress,
-              ),
-              SizedBox(height: 12),
-              TextField(
-                controller: _password,
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(3)),
-                  ),
-                  labelText: 'Password',
-                ),
-              ),
-              SizedBox(height: 40),
-              FlatButton(
-                color: Theme.of(context).primaryColor,
-                child: Text(
-                  'Sign-in',
+            ),
+          ),
+        ),
+        SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(32),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: 50),
+                Text(
+                  'Sign In',
                   style: TextStyle(
+                    fontSize: 24,
                     color: Colors.white,
                   ),
                 ),
-                onPressed: () {
-                  _signInWithEmailWithPassword(
-                    email: _email.text,
-                    password: _password.text,
-                  );
-                },
-              ),
-              SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Need an account?'),
-                  SizedBox(width: 12),
-                  FlatButton(
-                    textColor: Theme.of(context).primaryColor,
-                    child: Text('Sign up'),
-                    onPressed: () {
-                      Navigator.of(context)
-                          .push(
-                        MaterialPageRoute(
-                          builder: (_) => SignUpScreen(),
-                        ),
-                      )
-                          .then((result) {
-                        _createUserWithEmailAndPassword(
-                          email: result.email,
-                          password: result.password,
-                        );
-                      });
-                    },
-                  )
-                ],
-              )
-            ],
+                SizedBox(height: 30),
+                TextField(
+                  controller: _email,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    labelText: 'Email',
+                    labelStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                SizedBox(height: 12),
+                TextField(
+                  controller: _password,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    labelText: 'Password',
+                    labelStyle: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                FlatButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  color: Color(0xFFBE144D),
+                  child: Text(
+                    'Sign-in',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  onPressed: () {
+                    _signInWithEmailWithPassword(
+                      email: _email.text,
+                      password: _password.text,
+                    );
+                  },
+                ),
+                SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Need an account?'),
+                    SizedBox(width: 12),
+                    FlatButton(
+                      color: Color(0xFFBE144D),
+                      textColor: Colors.white,
+                      child: Text('Sign up'),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .push(
+                          MaterialPageRoute(
+                            builder: (_) => SignUpScreen(),
+                          ),
+                        )
+                            .then((result) {
+                          _createUserWithEmailAndPassword(
+                            email: result.email,
+                            password: result.password,
+                          );
+                        });
+                      },
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
-      ),
+      ]),
     );
   }
 }
