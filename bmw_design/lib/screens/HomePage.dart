@@ -1,18 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     return MaterialApp(
       title: 'My App which needs login',
       home: Scaffold(
+        backgroundColor: Colors.amber,
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('My App'),
+              Text('Car App HomePage'),
               Text('User: ${user.email}\n${user.uid}'),
               SizedBox(height: 50),
               RaisedButton(
