@@ -50,7 +50,7 @@ class _SignInScreenState extends State<SignInScreen> {
     }
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(message),
-      backgroundColor: Colors.red,
+      backgroundColor: Color(0xFFBE144D),
     ));
   }
 
@@ -111,6 +111,9 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 SizedBox(height: 30),
                 TextField(
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                   controller: _email,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -129,7 +132,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       borderSide: BorderSide(
                         color: Colors.white,
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
                     labelText: 'Email',
                     labelStyle: TextStyle(
@@ -140,11 +143,26 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 SizedBox(height: 12),
                 TextField(
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                   controller: _password,
                   obscureText: true,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                      ),
                       borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.white,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
                     labelText: 'Password',
                     labelStyle: TextStyle(
