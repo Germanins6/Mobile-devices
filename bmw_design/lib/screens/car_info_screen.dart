@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../app.dart';
 import '../widgets/product_feature.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class CarInfoScreen extends StatelessWidget {
   final Car car;
+  final user = FirebaseAuth.instance.currentUser;
   CarInfoScreen({@required this.car});
 
   @override
@@ -268,7 +270,10 @@ class _BottomIcons extends StatelessWidget {
         IconButton(
           icon: Icon(Icons.account_circle),
           color: Colors.white,
-          onPressed: () {},
+          onPressed: () {
+            //Should be going to Profile screen and show user stuff
+            FirebaseAuth.instance.signOut();
+          },
         ),
       ],
       mainAxisAlignment: MainAxisAlignment.spaceAround,
