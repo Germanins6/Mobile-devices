@@ -1,4 +1,6 @@
 import 'package:bmw_design/screens/car_info_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Specs {
@@ -25,9 +27,11 @@ class Car {
   );
 }
 
+final carSelected = FirebaseFirestore.instance.collection("cars");
+
 final bmw = Car(
   'YOUR VISION',
-  'BMW ',
+  'BMW',
   'I8 SHADOW EDITION',
   'LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, '
       'SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA '

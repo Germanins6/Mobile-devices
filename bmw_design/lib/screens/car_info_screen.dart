@@ -45,8 +45,9 @@ class _MenuButton extends StatelessWidget {
       child: Stack(
         children: [
           Center(
-            child: Icon(
-              Icons.favorite_sharp,
+            child: IconButton(
+              icon: Icon(Icons.favorite_sharp),
+              onPressed: () {},
             ),
           ),
         ],
@@ -248,9 +249,10 @@ class _BottomIcons extends StatelessWidget {
     return Row(
       children: [
         //Icon 1
-        Icon(
-          Icons.arrow_back,
+        IconButton(
+          icon: Icon(Icons.arrow_back),
           color: Colors.white,
+          onPressed: () {},
         ),
         //MiddleButton
         FloatingActionButton(
@@ -263,9 +265,10 @@ class _BottomIcons extends StatelessWidget {
           onPressed: () {},
         ),
         //Icon 4
-        Icon(
-          Icons.account_circle_sharp,
+        IconButton(
+          icon: Icon(Icons.account_circle),
           color: Colors.white,
+          onPressed: () {},
         ),
       ],
       mainAxisAlignment: MainAxisAlignment.spaceAround,
