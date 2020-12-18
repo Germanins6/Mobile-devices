@@ -134,7 +134,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    labelText: 'Email',
+                    labelText: 'Nick',
                     labelStyle: TextStyle(
                       color: Colors.white,
                     ),
@@ -193,7 +193,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Need an account?'),
+                    Text(
+                      'Need an account?',
+                      style: TextStyle(
+                        color: Colors.white70,
+                      ),
+                    ),
                     SizedBox(width: 12),
                     FlatButton(
                       color: Color(0xFFBE144D),

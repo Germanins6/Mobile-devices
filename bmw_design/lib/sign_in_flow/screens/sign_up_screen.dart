@@ -30,62 +30,70 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(32),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(height: 40),
-            Text(
-              'Sign Up',
+      body: Stack(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Color(0xFF26203E), Color(0xFF413972)],
+                ),
+              ),
+            ),
+          ),
+          SizedBox(height: 40),
+          Text(
+            'Sign Up',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(height: 30),
+          TextField(
+            controller: _email,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(3)),
+              ),
+              labelText: 'Email',
+            ),
+            keyboardType: TextInputType.emailAddress,
+          ),
+          SizedBox(height: 12),
+          TextField(
+            controller: _password,
+            obscureText: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(3)),
+              ),
+              labelText: 'Password',
+            ),
+          ),
+          SizedBox(height: 20),
+          FlatButton(
+            color: Color(0xFFBE144D),
+            child: Text(
+              'Register',
               style: TextStyle(
-                fontSize: 24,
-                color: Theme.of(context).primaryColor,
+                color: Colors.white,
               ),
             ),
-            SizedBox(height: 30),
-            TextField(
-              controller: _email,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(3)),
+            onPressed: () {
+              Navigator.of(context).pop(
+                EmailAndPassword(
+                  _email.text,
+                  _password.text,
                 ),
-                labelText: 'Email',
-              ),
-              keyboardType: TextInputType.emailAddress,
-            ),
-            SizedBox(height: 12),
-            TextField(
-              controller: _password,
-              obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(3)),
-                ),
-                labelText: 'Password',
-              ),
-            ),
-            SizedBox(height: 20),
-            FlatButton(
-              color: Theme.of(context).primaryColor,
-              child: Text(
-                'Register',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop(
-                  EmailAndPassword(
-                    _email.text,
-                    _password.text,
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
