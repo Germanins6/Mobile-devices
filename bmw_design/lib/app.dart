@@ -1,3 +1,6 @@
+import 'package:bmw_design/screens/car_info_screen.dart';
+import 'package:flutter/material.dart';
+
 class Specs {
   String image, units;
   num value;
@@ -38,7 +41,6 @@ final bmw = Car(
   ],
 );
 
-/*
 class CarInfoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -50,4 +52,3 @@ class CarInfoApp extends StatelessWidget {
     );
   }
 }
-*/

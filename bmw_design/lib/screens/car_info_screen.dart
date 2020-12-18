@@ -25,12 +25,6 @@ class CarInfoScreen extends StatelessWidget {
               ),
             ],
           ),
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.all(8),
-              child: BackButton(),
-            ),
-          ),
           Align(
             alignment: Alignment.topRight,
             child: _MenuButton(),
@@ -51,7 +45,9 @@ class _MenuButton extends StatelessWidget {
       child: Stack(
         children: [
           Center(
-            child: Icon(Icons.drag_handle_rounded),
+            child: Icon(
+              Icons.favorite_sharp,
+            ),
           ),
         ],
       ),

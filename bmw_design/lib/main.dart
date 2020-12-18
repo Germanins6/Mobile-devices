@@ -1,7 +1,9 @@
+import 'package:bmw_design/app.dart';
+import 'package:bmw_design/screens/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'app.dart';
 
-import 'screens/HomePage.dart';
 import 'sign_in_flow/auth_state_switch.dart';
 
 Future<void> main() async {
@@ -9,7 +11,7 @@ Future<void> main() async {
   await Firebase.initializeApp();
   runApp(
     AuthStateSwitch(
-      app: HomePage(),
+      app: CarInfoApp(),
     ),
   );
 }
