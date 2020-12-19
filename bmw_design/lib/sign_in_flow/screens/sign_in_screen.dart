@@ -134,7 +134,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
-                    labelText: 'Nick',
+                    labelText: 'Email',
                     labelStyle: TextStyle(
                       color: Colors.white,
                     ),
