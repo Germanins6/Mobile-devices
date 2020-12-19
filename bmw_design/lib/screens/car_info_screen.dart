@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import '../app.dart';
 import '../widgets/product_feature.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'Profile.dart';
 
 class CarInfoScreen extends StatelessWidget {
   final Car car;
