@@ -42,27 +42,6 @@ class CarInfoScreen extends StatelessWidget {
   }
 }
 
-class _MenuButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-      height: 50,
-      padding: EdgeInsets.fromLTRB(14, 15, 14, 14),
-      child: Stack(
-        children: [
-          Center(
-            child: IconButton(
-              icon: Icon(Icons.favorite_sharp),
-              onPressed: () {},
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class _CarInfo extends StatelessWidget {
   final Car car;
   _CarInfo({this.car});
