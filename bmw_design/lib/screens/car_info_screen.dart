@@ -248,7 +248,7 @@ class _BottomIcons extends StatelessWidget {
           ),
           onPressed: () {},
         ),
-        //Icon 4
+        //ProfileButton
         IconButton(
           icon: Icon(Icons.account_circle),
           color: Colors.white,
@@ -257,7 +257,6 @@ class _BottomIcons extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => Profile()),
             );
-            //Should be going to Profile screen and show user stuff
           },
         ),
       ],

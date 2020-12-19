@@ -1,3 +1,4 @@
+import 'package:bmw_design/sign_in_flow/screens/sign_in_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ class Profile extends StatelessWidget {
       home: Scaffold(
         body: Column(
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
@@ -33,32 +35,60 @@ class Profile extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.all(32),
-                    child: Column(children: [
-                      Text(
-                        'User Profile',
-                        style: TextStyle(
-                          fontSize: 30,
-                          color: Colors.white,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 20),
+                        Container(
+                          alignment: Alignment.topCenter,
+                          child: Text(
+                            'User Profile',
+                            style: TextStyle(
+                              fontSize: 30,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 20),
-                      Text(
-                        'User: ${user.email}\n UID: ${user.uid}',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
+                        SizedBox(height: 50),
+                        Container(
+                          child: Text(
+                            'User: ${user.email}\n UID: ${user.uid}',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 400),
-                      IconButton(
-                        icon: Icon(Icons.arrow_back),
-                        color: Colors.white,
-                        alignment: Alignment.bottomLeft,
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
-                    ]),
+                        SizedBox(height: 150),
+                        Container(
+                          alignment: Alignment.centerRight,
+                          child: FlatButton(
+                            color: Color(0xFFBE144D),
+                            textColor: Colors.white,
+                            child: Text('Logout'),
+                            onPressed: () {
+                              FirebaseAuth.instance.signOut();
+                              // Navigator.of(context).push(
+                              //   MaterialPageRoute(
+                              //     builder: (_) => SignInScreen(),
+                              //   ),
+                              // );
+                            },
+                          ),
+                        ),
+                        SizedBox(height: 150),
+                        Container(
+                          alignment: Alignment.bottomLeft,
+                          child: IconButton(
+                            icon: Icon(Icons.arrow_back_rounded),
+                            color: Colors.white,
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
