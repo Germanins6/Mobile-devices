@@ -253,8 +253,9 @@ class _BottomIcons extends StatelessWidget {
           icon: Icon(Icons.account_circle),
           color: Colors.white,
           onPressed: () {
-            AuthStateSwitch(
-              app: Profile(),
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Profile()),
             );
             //Should be going to Profile screen and show user stuff
           },

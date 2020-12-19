@@ -31,7 +31,22 @@ class Profile extends StatelessWidget {
                   //   onPressed: () {
                   //     FirebaseAuth.instance.signOut();
                   //   },
-                  child: Text('User Profile'),
+                  child: Row(children: [
+                    Text(
+                      'User Profile',
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ]),
                 ),
               ),
             ],
