@@ -1,4 +1,3 @@
-import 'package:bmw_design/sign_in_flow/auth_state_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../app.dart';
@@ -6,10 +5,17 @@ import '../widgets/product_feature.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'Profile.dart';
 
-class CarInfoScreen extends StatelessWidget {
+class CarInfoScreen extends StatefulWidget {
   final Car car;
-  final user = FirebaseAuth.instance.currentUser;
+
   CarInfoScreen({@required this.car});
+
+  @override
+  _CarInfoScreenState createState() => _CarInfoScreenState();
+}
+
+class _CarInfoScreenState extends State<CarInfoScreen> {
+  final user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +27,11 @@ class CarInfoScreen extends StatelessWidget {
             children: [
               Expanded(
                 flex: 5,
-                child: _CarPreviewContainer(car: bmw),
+                child: _CarPreviewContainer(car: widget.car),
               ),
               Expanded(
                 flex: 6,
-                child: _CarInfo(car: bmw),
+                child: _CarInfo(car: widget.car),
               ),
             ],
           ),
@@ -43,10 +49,15 @@ class CarInfoScreen extends StatelessWidget {
   }
 }
 
-class _CarInfo extends StatelessWidget {
+class _CarInfo extends StatefulWidget {
   final Car car;
   _CarInfo({this.car});
 
+  @override
+  __CarInfoState createState() => __CarInfoState();
+}
+
+class __CarInfoState extends State<_CarInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,8 +66,8 @@ class _CarInfo extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 3, child: _CarInfoBody(car: bmw)),
-              _CarInfoBottom(car: bmw),
+              Expanded(flex: 3, child: _CarInfoBody(car: widget.car)),
+              _CarInfoBottom(car: widget.car),
             ],
           )
         ],
@@ -155,10 +166,15 @@ class _CarInfoTitle extends StatelessWidget {
   }
 }
 
-class _CarInfoBody extends StatelessWidget {
+class _CarInfoBody extends StatefulWidget {
   final Car car;
   _CarInfoBody({this.car});
 
+  @override
+  __CarInfoBodyState createState() => __CarInfoBodyState();
+}
+
+class __CarInfoBodyState extends State<_CarInfoBody> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -173,16 +189,16 @@ class _CarInfoBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _CarInfoTitle(car: car),
+            _CarInfoTitle(car: widget.car),
             SizedBox(height: 20),
             _CarName(
-              name: bmw.name,
-              model: bmw.model,
+              name: '${widget.car.name}',
+              model: '${widget.car.model}',
             ),
             SizedBox(height: 20),
-            _CarDescription(description: bmw.description),
+            _CarDescription(description: '${widget.car.description}'),
             SizedBox(height: 20),
-            _CarSpecs(carSpecs: car.carSpecs)
+            _CarSpecs(carSpecs: widget.car.carSpecs)
           ],
         ),
       ),
@@ -248,7 +264,7 @@ class _BottomIcons extends StatelessWidget {
           ),
           onPressed: () {},
         ),
-        //ProfileButton
+        //Icon 4
         IconButton(
           icon: Icon(Icons.account_circle),
           color: Colors.white,
@@ -257,6 +273,7 @@ class _BottomIcons extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => Profile()),
             );
+            //Should be going to Profile screen and show user stuff
           },
         ),
       ],
@@ -358,16 +375,21 @@ class _CarName extends StatelessWidget {
   }
 }
 
-class _CarPreviewContainer extends StatelessWidget {
+class _CarPreviewContainer extends StatefulWidget {
   final Car car;
   _CarPreviewContainer({@required this.car});
 
+  @override
+  __CarPreviewContainerState createState() => __CarPreviewContainerState();
+}
+
+class __CarPreviewContainerState extends State<_CarPreviewContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Stack(
         children: <Widget>[
-          _CarPicture(car: bmw),
+          _CarPicture(car: widget.car),
           _CarInfoTabs(),
         ],
       ),
@@ -375,16 +397,21 @@ class _CarPreviewContainer extends StatelessWidget {
   }
 }
 
-class _CarPicture extends StatelessWidget {
+class _CarPicture extends StatefulWidget {
   final Car car;
   _CarPicture({this.car});
 
+  @override
+  __CarPictureState createState() => __CarPictureState();
+}
+
+class __CarPictureState extends State<_CarPicture> {
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
       child: Image.asset(
-        bmw.photoUrl,
+        '${widget.car.photoUrl}',
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         fit: BoxFit.cover,
