@@ -49,6 +49,7 @@ flutter:
   assets:
        - assets/icons/
        - assets/headerPic.jpg
+       - assets/tempLogo.png
        - assets/buttons/
 
 

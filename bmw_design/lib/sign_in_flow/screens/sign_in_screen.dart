@@ -101,7 +101,17 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 50),
+                Container(
+                  height: 300,
+                  width: 200,
+                  child: Image.asset(
+                    'assets/tempLogo.png',
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(height: 20),
                 Text(
                   'Sign In',
                   style: TextStyle(
