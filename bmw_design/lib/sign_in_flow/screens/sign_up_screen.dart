@@ -90,7 +90,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    keyboardType: TextInputType.name,
                   ),
                   SizedBox(height: 12),
                   TextField(
@@ -119,7 +118,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         color: Colors.white,
                       ),
                     ),
-                    keyboardType: TextInputType.name,
                   ),
                   SizedBox(height: 12),
                   TextField(
