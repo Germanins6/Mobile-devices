@@ -28,10 +28,14 @@ class CarInfoScreen extends StatelessWidget {
               ),
             ],
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: _MenuButton(),
-          )
+          SafeArea(
+            child: Padding(
+                padding: EdgeInsets.all(8),
+                child: IconButton(
+                  icon: Icon(Icons.favorite_outline_sharp),
+                  onPressed: () {},
+                )),
+          ),
         ],
       ),
     );
