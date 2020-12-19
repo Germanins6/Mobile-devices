@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class EmailAndPassword {
-  String email, password;
-  EmailAndPassword(this.email, this.password);
+  String email, password, name, surname;
+  EmailAndPassword(this.name, this.surname, this.email, this.password);
 }
 
 class SignUpScreen extends StatefulWidget {
@@ -11,10 +11,12 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  TextEditingController _email, _password;
+  TextEditingController _name, _surname, _email, _password;
 
   @override
   void initState() {
+    _name = TextEditingController();
+    _surname = TextEditingController();
     _email = TextEditingController();
     _password = TextEditingController();
     super.initState();
@@ -22,6 +24,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   void dispose() {
+    _name.dispose();
+    _surname.dispose();
     _email.dispose();
     _password.dispose();
     super.dispose();
@@ -60,6 +64,64 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   SizedBox(height: 30),
+                  TextField(
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                    controller: _name,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                      labelText: 'Name',
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    keyboardType: TextInputType.name,
+                  ),
+                  SizedBox(height: 12),
+                  TextField(
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                    controller: _surname,
+                    decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                      labelText: 'Surname',
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    keyboardType: TextInputType.name,
+                  ),
+                  SizedBox(height: 12),
                   TextField(
                     style: TextStyle(
                       color: Colors.white,
@@ -132,6 +194,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.of(context).pop(
                         EmailAndPassword(
+                          _name.text,
+                          _surname.text,
                           _email.text,
                           _password.text,
                         ),

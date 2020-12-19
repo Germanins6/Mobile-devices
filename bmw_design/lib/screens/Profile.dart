@@ -31,7 +31,7 @@ class Profile extends StatelessWidget {
                   //   onPressed: () {
                   //     FirebaseAuth.instance.signOut();
                   //   },
-                  child: Row(children: [
+                  child: Column(children: [
                     Text(
                       'User Profile',
                       style: TextStyle(
@@ -39,6 +39,7 @@ class Profile extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
+                    Text('User: ${user.email}'),
                     IconButton(
                       icon: Icon(Icons.arrow_back),
                       color: Colors.white,
