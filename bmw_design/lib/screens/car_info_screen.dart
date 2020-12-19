@@ -70,9 +70,8 @@ class _CarInfo extends StatelessWidget {
         children: [
           Column(
             children: [
-              Expanded(flex: 1, child: _CarInfoTitle(car: bmw)),
               Expanded(flex: 3, child: _CarInfoBody(car: bmw)),
-              Expanded(flex: 1, child: _CarInfoBottom(car: bmw)),
+              _CarInfoBottom(car: bmw),
             ],
           )
         ],
@@ -214,34 +213,27 @@ class _CarInfoBottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        _CarSpecs(
-          carSpecs: car.carSpecs,
-        ),
-        Stack(
+        Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: Color(0xFF1b2139),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(50),
-                    ),
-                  ),
+            Container(
+              height: 60,
+              decoration: BoxDecoration(
+                color: Color(0xFF1b2139),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(50),
                 ),
-              ],
-            ),
-            Column(
-              children: [
-                Center(
-                  child: _BottomIcons(),
-                ),
-              ],
-              mainAxisAlignment: MainAxisAlignment.end,
+              ),
             ),
           ],
+        ),
+        Column(
+          children: [
+            Center(
+              child: _BottomIcons(),
+            ),
+          ],
+          mainAxisAlignment: MainAxisAlignment.end,
         ),
       ],
     );
