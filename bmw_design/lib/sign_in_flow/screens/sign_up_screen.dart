@@ -61,28 +61,67 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(height: 30),
                   TextField(
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                     controller: _email,
                     decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(3)),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                       labelText: 'Email',
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                     keyboardType: TextInputType.emailAddress,
                   ),
                   SizedBox(height: 12),
                   TextField(
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
                     controller: _password,
                     obscureText: true,
                     decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(3)),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                       ),
                       labelText: 'Password',
+                      labelStyle: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   SizedBox(height: 20),
                   FlatButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     color: Color(0xFFBE144D),
                     child: Text(
                       'Register',

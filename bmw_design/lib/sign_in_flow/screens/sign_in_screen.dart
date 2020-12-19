@@ -196,7 +196,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     Text(
                       'Need an account?',
                       style: TextStyle(
-                        color: Colors.white70,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(width: 12),
