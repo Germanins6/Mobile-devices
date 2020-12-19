@@ -29,30 +29,13 @@ class CarInfoScreen extends StatelessWidget {
               ),
             ],
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: _MenuButton(),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class _MenuButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 50,
-      height: 50,
-      padding: EdgeInsets.fromLTRB(14, 15, 14, 14),
-      child: Stack(
-        children: [
-          Center(
-            child: IconButton(
-              icon: Icon(Icons.favorite_sharp),
-              onPressed: () {},
-            ),
+          SafeArea(
+            child: Padding(
+                padding: EdgeInsets.all(8),
+                child: IconButton(
+                  icon: Icon(Icons.favorite_outline_sharp),
+                  onPressed: () {},
+                )),
           ),
         ],
       ),
