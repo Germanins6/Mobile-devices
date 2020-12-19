@@ -179,25 +179,28 @@ class _CarInfoBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        left: 45,
-        right: 45,
-        top: 20,
+        left: 20,
+        right: 20,
       ),
       decoration: BoxDecoration(
         color: Color(0xFF151828),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _CarName(
-            name: bmw.name,
-            model: bmw.model,
-          ),
-          SizedBox(height: 40),
-          _CarDescription(
-            description: bmw.description,
-          ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            _CarInfoTitle(car: car),
+            SizedBox(height: 20),
+            _CarName(
+              name: bmw.name,
+              model: bmw.model,
+            ),
+            SizedBox(height: 20),
+            _CarDescription(description: bmw.description),
+            SizedBox(height: 20),
+            _CarSpecs(carSpecs: car.carSpecs)
+          ],
+        ),
       ),
     );
   }

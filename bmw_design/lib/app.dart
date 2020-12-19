@@ -1,6 +1,5 @@
 import 'package:bmw_design/screens/car_info_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Specs {
@@ -41,7 +40,6 @@ final bmw = Car(
   [
     Specs('buttonImage.jpg', '- 60', 0),
     Specs('Button2Image.png', 'MPH', 175),
-    Specs('button3Image.jpg', 'MPH', 175),
   ],
 );
 
