@@ -8,19 +8,31 @@ class Profile extends StatelessWidget {
     return MaterialApp(
       title: 'My App which needs login',
       home: Scaffold(
-        backgroundColor: Colors.amber,
         body: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Car App HomePage'),
-              Text('User: ${user.email}\n${user.uid}'),
-              SizedBox(height: 50),
-              RaisedButton(
-                child: Text('Logout'),
-                onPressed: () {
-                  FirebaseAuth.instance.signOut();
-                },
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [Color(0xFF26203E), Color(0xFF413972)],
+                    ),
+                  ),
+                  // Text('Car App HomePage'),
+                  // Text('User: ${user.email}\n${user.displayName}'),
+                  // SizedBox(height: 50),
+                  // RaisedButton(
+                  //   child: Text('Logout'),
+                  //   onPressed: () {
+                  //     FirebaseAuth.instance.signOut();
+                  //   },
+                  child: Text('User Profile'),
+                ),
               ),
             ],
           ),

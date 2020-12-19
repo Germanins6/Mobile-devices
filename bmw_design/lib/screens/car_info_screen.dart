@@ -1,3 +1,4 @@
+import 'package:bmw_design/sign_in_flow/auth_state_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../app.dart';
@@ -250,7 +251,9 @@ class _BottomIcons extends StatelessWidget {
         IconButton(
           icon: Icon(Icons.arrow_back),
           color: Colors.white,
-          onPressed: () {},
+          onPressed: () {
+            FirebaseAuth.instance.signOut();
+          },
         ),
         //MiddleButton
         FloatingActionButton(
@@ -267,8 +270,10 @@ class _BottomIcons extends StatelessWidget {
           icon: Icon(Icons.account_circle),
           color: Colors.white,
           onPressed: () {
+            AuthStateSwitch(
+              app: Profile(),
+            );
             //Should be going to Profile screen and show user stuff
-            FirebaseAuth.instance.signOut();
           },
         ),
       ],
