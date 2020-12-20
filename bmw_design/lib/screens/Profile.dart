@@ -27,11 +27,6 @@ class Profile extends StatelessWidget {
                     colors: [Color(0xFF26203E), Color(0xFF413972)],
                   ),
                 ),
-                // RaisedButton(
-                //   child: Text('Logout'),
-                //   onPressed: () {
-                //     FirebaseAuth.instance.signOut();
-                //   },
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.all(32),
@@ -68,11 +63,6 @@ class Profile extends StatelessWidget {
                             child: Text('Logout'),
                             onPressed: () {
                               FirebaseAuth.instance.signOut();
-                              // Navigator.of(context).push(
-                              //   MaterialPageRoute(
-                              //     builder: (_) => SignInScreen(),
-                              //   ),
-                              // );
                             },
                           ),
                         ),
@@ -99,33 +89,3 @@ class Profile extends StatelessWidget {
     );
   }
 }
-
-/*
-class LoginScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
-    return MaterialApp(
-      title: 'My App which needs login',
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('My App'),
-              Text('User: ${user.email}\n${user.uid}'),
-              SizedBox(height: 50),
-              RaisedButton(
-                child: Text('Logout'),
-                onPressed: () {
-                  FirebaseAuth.instance.signOut();
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-*/

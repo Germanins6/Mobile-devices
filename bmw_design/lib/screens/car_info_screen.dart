@@ -246,7 +246,7 @@ class _BottomIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        //Icon 1
+        //BackButton
         IconButton(
           icon: Icon(Icons.arrow_back),
           color: Colors.white,
@@ -264,7 +264,7 @@ class _BottomIcons extends StatelessWidget {
           ),
           onPressed: () {},
         ),
-        //Icon 4
+        //ProfileButton
         IconButton(
           icon: Icon(Icons.account_circle),
           color: Colors.white,
@@ -273,7 +273,6 @@ class _BottomIcons extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => Profile()),
             );
-            //Should be going to Profile screen and show user stuff
           },
         ),
       ],
