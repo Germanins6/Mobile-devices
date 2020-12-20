@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../app.dart';
 import '../widgets/product_feature.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'Profile.dart';
+import 'package:bmw_design/widgets/car.dart';
 
 class CarInfoScreen extends StatefulWidget {
   final Car car;

@@ -1,5 +1,3 @@
-import 'package:bmw_design/sign_in_flow/screens/sign_in_screen.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -7,8 +5,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
-    final db = FirebaseFirestore.instance;
-    final firebaseUser = db.collection('users').snapshots();
+
     return MaterialApp(
       title: 'My App which needs login',
       home: Scaffold(
