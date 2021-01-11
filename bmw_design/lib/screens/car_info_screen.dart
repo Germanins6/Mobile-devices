@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../widgets/product_feature.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'buyCar.dart';
 import 'Profile.dart';
 import 'package:bmw_design/widgets/car.dart';
 
@@ -262,7 +263,12 @@ class _BottomIcons extends StatelessWidget {
             size: 20,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => BuyCar()),
+            );
+          },
         ),
         //ProfileButton
         IconButton(
