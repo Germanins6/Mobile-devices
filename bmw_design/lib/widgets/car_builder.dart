@@ -33,6 +33,8 @@ class CarInfoApp extends StatelessWidget {
               model = snapshot.data["model"];
               description = snapshot.data["description"];
               photoUrl = snapshot.data["photo"];
+            } else {
+              return Center(child: CircularProgressIndicator());
             }
 
             return CarInfoScreen(

@@ -1,8 +1,8 @@
 //Buy screen
 
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bmw_design/widgets/car.dart';
+//import 'package:bmw_design/widgets/car.dart';
 
 class BuyCar extends StatefulWidget {
   @override
@@ -47,8 +47,8 @@ class _BuyCarState extends State<BuyCar> {
 }
 
 class BuyCarPreview extends StatefulWidget {
-  final Car car;
-  BuyCarPreview({this.car});
+  // final Car car;
+  // BuyCarPreview({this.car});
   @override
   _BuyCarPreviewState createState() => _BuyCarPreviewState();
 }
@@ -77,17 +77,54 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
+      alignment: Alignment.topLeft,
       child: Column(
         children: [
-          Text(
-            "Model",
-            style: TextStyle(
-                fontFamily: 'AdventProL',
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Text(
+                    "Car Name",
+                    style: TextStyle(
+                      fontFamily: 'AdventProL',
+                      color: Colors.white,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Container(
+                  child: Text(
+                    "Model, Manufacturer",
+                    style: TextStyle(
+                      fontFamily: 'AdventProL',
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 100),
+          FloatingActionButton(
+            backgroundColor: Colors.red,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(2),
+            ),
+            onPressed: () {},
+            child: Text(
+              "BUY NOW",
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
-                fontWeight: FontWeight.normal),
-            textAlign: TextAlign.left,
+              ),
+            ),
           ),
         ],
       ),
