@@ -13,7 +13,7 @@ class _BuyCarState extends State<BuyCar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF1b2139),
       body: Stack(
         children: [
           SafeArea(
@@ -31,14 +31,14 @@ class _BuyCarState extends State<BuyCar> {
                 flex: 6,
                 child: BuyCarInfo(),
               ),
+              IconButton(
+                icon: Icon(Icons.arrow_back_rounded),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ],
-          ),
-          IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
-            color: Colors.white,
-            onPressed: () {
-              Navigator.pop(context);
-            },
           ),
         ],
       ),
@@ -60,8 +60,8 @@ class _BuyCarPreviewState extends State<BuyCarPreview> {
       alignment: Alignment.topCenter,
       child: Image.asset(
         'assets/headerPic.jpg',
-        // width: MediaQuery.of(context).size.width,
-        // height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         fit: BoxFit.cover,
       ),
     );
@@ -78,55 +78,56 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  child: Text(
-                    "Car Name",
-                    style: TextStyle(
-                      fontFamily: 'AdventProL',
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+      padding: EdgeInsets.all(30),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              child: Text(
+                "Car Name",
+                style: TextStyle(
+                  fontFamily: 'AdventProL',
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(height: 20),
-                Container(
-                  child: Text(
-                    "Model, Manufacturer",
-                    style: TextStyle(
-                      fontFamily: 'AdventProL',
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 100),
-          FloatingActionButton(
-            backgroundColor: Colors.red,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(2),
-            ),
-            onPressed: () {},
-            child: Text(
-              "BUY NOW",
-              style: TextStyle(
-                color: Colors.white,
               ),
             ),
-          ),
-        ],
+            SizedBox(height: 20),
+            Container(
+              child: Text(
+                "Model, Manufacturer",
+                style: TextStyle(
+                  fontFamily: 'AdventProL',
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
+            SizedBox(height: 100),
+            Container(
+              alignment: Alignment.bottomRight,
+              width: 200,
+              height: 100,
+              child: FloatingActionButton(
+                backgroundColor: Colors.red,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                onPressed: () {},
+                child: Text(
+                  "BUY NOW",
+                  style: TextStyle(
+                    color: Colors.white,
+                    //fontSize: 50,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
 
