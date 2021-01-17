@@ -1,7 +1,6 @@
 //Buy screen
 
 //import 'package:flutter/cupertino.dart';
-//import 'dart:html';
 
 import 'package:flutter/material.dart';
 //import 'package:bmw_design/widgets/car.dart';
