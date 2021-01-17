@@ -1,6 +1,8 @@
 //Buy screen
 
 //import 'package:flutter/cupertino.dart';
+//import 'dart:html';
+
 import 'package:flutter/material.dart';
 //import 'package:bmw_design/widgets/car.dart';
 
@@ -106,16 +108,109 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
                 ),
               ),
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 20),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "Color: ",
+                    style: TextStyle(
+                      fontFamily: 'AdventProL',
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.red,
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.blue,
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.green,
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.amber,
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.black,
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey,
+                      border: Border.all(color: Colors.white),
+                    ),
+                  ),
+                  Container(
+                    width: 20,
+                    height: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 40),
+            Container(
+              alignment: Alignment.centerRight,
+              width: 10,
+              height: 50,
+              child: Text(
+                "999,99 €",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                ),
+              ),
+            ),
             Container(
               alignment: Alignment.bottomRight,
-              width: 200,
-              height: 100,
+              width: 50,
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.red,
+              ),
               child: FloatingActionButton(
-                backgroundColor: Colors.red,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
+                    //borderRadius: BorderRadius.all(),
+                    ),
                 onPressed: () {},
                 child: Text(
                   "BUY NOW",
