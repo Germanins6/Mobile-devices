@@ -186,7 +186,7 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
                 ],
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
             Container(
               alignment: Alignment.centerRight,
               width: 10,
@@ -199,23 +199,22 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
                 ),
               ),
             ),
+            SizedBox(height: 10),
             Container(
               alignment: Alignment.bottomRight,
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.red,
-              ),
-              child: FloatingActionButton(
-                shape: RoundedRectangleBorder(
-                    //borderRadius: BorderRadius.all(),
+              child: SizedBox(
+                width: 150,
+                height: 50,
+                child: RaisedButton(
+                  color: Colors.red,
+                  onPressed: () {},
+                  child: Text(
+                    "BUY NOW",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
                     ),
-                onPressed: () {},
-                child: Text(
-                  "BUY NOW",
-                  style: TextStyle(
-                    color: Colors.white,
-                    //fontSize: 50,
                   ),
                 ),
               ),
