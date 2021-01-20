@@ -232,7 +232,7 @@ class _CarInfoBottom extends StatelessWidget {
         Column(
           children: [
             Center(
-              child: _BottomIcons(),
+              child: _BottomIcons(car),
             ),
           ],
           mainAxisAlignment: MainAxisAlignment.end,
@@ -243,6 +243,9 @@ class _CarInfoBottom extends StatelessWidget {
 }
 
 class _BottomIcons extends StatelessWidget {
+  final Car car;
+  _BottomIcons(this.car);
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -252,7 +255,7 @@ class _BottomIcons extends StatelessWidget {
           icon: Icon(Icons.arrow_back),
           color: Colors.white,
           onPressed: () {
-            FirebaseAuth.instance.signOut();
+            Navigator.pop(context);
           },
         ),
         //MiddleButton
@@ -266,7 +269,7 @@ class _BottomIcons extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => BuyCar()),
+              MaterialPageRoute(builder: (context) => BuyCar(car)),
             );
           },
         ),

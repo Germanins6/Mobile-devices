@@ -2,10 +2,13 @@
 
 //import 'package:flutter/cupertino.dart';
 
+import 'package:bmw_design/widgets/car.dart';
 import 'package:flutter/material.dart';
 //import 'package:bmw_design/widgets/car.dart';
 
 class BuyCar extends StatefulWidget {
+  final Car cartobuy;
+  BuyCar(this.cartobuy);
   @override
   _BuyCarState createState() => _BuyCarState();
 }
@@ -26,7 +29,7 @@ class _BuyCarState extends State<BuyCar> {
             children: [
               Expanded(
                 flex: 5,
-                child: BuyCarPreview(),
+                child: BuyCarPreview(car: widget.cartobuy),
               ),
               Expanded(
                 flex: 6,
@@ -48,8 +51,8 @@ class _BuyCarState extends State<BuyCar> {
 }
 
 class BuyCarPreview extends StatefulWidget {
-  // final Car car;
-  // BuyCarPreview({this.car});
+  final Car car;
+  BuyCarPreview({this.car});
   @override
   _BuyCarPreviewState createState() => _BuyCarPreviewState();
 }
@@ -59,8 +62,8 @@ class _BuyCarPreviewState extends State<BuyCarPreview> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      child: Image.asset(
-        'assets/headerPic.jpg',
+      child: Image.network(
+        widget.car.photoUrl,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         fit: BoxFit.cover,
