@@ -415,8 +415,8 @@ class __CarPictureState extends State<_CarPicture> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      child: Image.asset(
-        'assets/headerPic.jpg',
+      child: Image.network(
+        widget.car.photoUrl,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         fit: BoxFit.cover,
