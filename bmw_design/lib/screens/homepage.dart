@@ -1,10 +1,13 @@
-/*
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:bmw_design/app.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final db = FirebaseFirestore.instance;
@@ -14,33 +17,24 @@ class HomePage extends StatelessWidget {
       title: 'HomePage',
       home: StreamBuilder(
         stream: firebaseCars.snapshots(),
-        builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {},
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          return ListView(
+            children: snapshot.data.docs.map((document) {
+              return Center(
+                child: Container(
+                  child: Text(document['brand']),
+                ),
+              );
+            }).toList(),
+          );
+        },
       ),
     );
   }
 }
-
-class CarHomepage extends StatelessWidget {
-  final Car car;
-  CarHomepage({this.car});
-
-  Widget _buildList(QuerySnapshot snapshot) {
-    final db = FirebaseFirestore.instance;
-    final carDocs = snapshot.docs;
-
-    return ListView.builder(
-      itemCount: carDocs.length,
-      itemBuilder: (context, int index) {
-        return ListTile(
-          leading: ,
-        );
-      },
-    );
-  }
-
-  return Scaffold(
-    body: StreamBuilder(stream: db.collection('cars').doc(car.id).snapshots(),),
-  );
-
-}
-*/
