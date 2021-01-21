@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Specs> carSpecs = [
-    Specs('buttonImage.jpg', '- 60', 0),
-    Specs('Button2Image.png', 'MPH', 175),
+    Specs('speedPhoto.jpg', '- 60', 0),
+    Specs('wheelPhoto.png', 'MPH', 175),
   ];
 
   @override
@@ -23,6 +23,11 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'HomePage',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Color(0xFF151828),
+        accentColor: Color(0xFF151828),
+      ),
       home: StreamBuilder(
         stream: firebaseCars.snapshots(),
         builder: (context, snapshot) {
@@ -43,22 +48,39 @@ class _HomePageState extends State<HomePage> {
           }
 
           return Scaffold(
+            backgroundColor: Color(0xFF151828),
             body: Stack(
               children: [
                 Expanded(
                   child: ListView.separated(
+                    padding: const EdgeInsets.all(30),
                     itemCount: snapshot.data.docs.length,
                     separatorBuilder: (BuildContext context, int index) =>
                         Divider(),
                     itemBuilder: (context, int index) {
-                      return Card(
-                        color: Colors.redAccent,
+                      return Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0xFFBE144D),
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: NetworkImage(
+                              snapshot.data.docs[index].get('photo'),
+                            ),
+                          ),
+                          color: Color(0xFFBE144D),
+                        ),
+                        height: 100,
                         child: ListTile(
-                          trailing: Image.network(
-                              snapshot.data.docs[index].get('photo')),
-                          title: Text(snapshot.data.docs[index].get('brand') +
-                              " " +
-                              snapshot.data.docs[index].get('model')),
+                          title: Text(
+                            snapshot.data.docs[index].get('brand'),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          subtitle:
+                              Text(snapshot.data.docs[index].get('model')),
                           onTap: () {
                             print(snapshot.data.docs[index].get('model'));
                             Navigator.of(context).push(
