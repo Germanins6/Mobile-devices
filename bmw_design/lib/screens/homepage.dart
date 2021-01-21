@@ -56,7 +56,9 @@ class _HomePageState extends State<HomePage> {
                         child: ListTile(
                           trailing: Image.network(
                               snapshot.data.docs[index].get('photo')),
-                          title: Text(snapshot.data.docs[index].get('brand')),
+                          title: Text(snapshot.data.docs[index].get('brand') +
+                              " " +
+                              snapshot.data.docs[index].get('model')),
                           onTap: () {
                             print(snapshot.data.docs[index].get('model'));
                             Navigator.of(context).push(
@@ -64,7 +66,6 @@ class _HomePageState extends State<HomePage> {
                                 builder: (context) => CarInfoScreen(
                                   car: Car(
                                     snapshot.data.docs[index].id,
-                                    snapshot.data.docs[index].get('title'),
                                     snapshot.data.docs[index].get('brand'),
                                     snapshot.data.docs[index].get('model'),
                                     snapshot.data.docs[index]

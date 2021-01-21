@@ -140,29 +140,6 @@ class _CarInfoTitle extends StatelessWidget {
         left: 30,
         top: 30,
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            car.title,
-            style: TextStyle(
-              fontFamily: 'AdventProM',
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
-          ),
-          Text(
-            'IS OUR NEXT INVENTION',
-            style: TextStyle(
-              fontFamily: 'AdventProL',
-              color: Colors.white,
-              fontSize: 30,
-              fontWeight: FontWeight.normal,
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
@@ -193,7 +170,7 @@ class __CarInfoBodyState extends State<_CarInfoBody> {
             _CarInfoTitle(car: widget.car),
             SizedBox(height: 20),
             _CarName(
-              name: '${widget.car.name}',
+              name: '${widget.car.brand}',
               model: '${widget.car.model}',
             ),
             SizedBox(height: 20),

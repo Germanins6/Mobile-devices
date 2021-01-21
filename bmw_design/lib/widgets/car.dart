@@ -6,8 +6,7 @@ class Specs {
 
 class Car {
   String id;
-  String title;
-  String name;
+  String brand;
   String model;
   String description;
   String photoUrl;
@@ -15,8 +14,7 @@ class Car {
 
   Car(
     this.id,
-    this.title,
-    this.name,
+    this.brand,
     this.model,
     this.description,
     this.photoUrl,
