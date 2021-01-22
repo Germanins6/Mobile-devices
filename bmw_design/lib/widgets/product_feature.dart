@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class ShowSpecs extends StatelessWidget {
   final String image, units;
-  final num value;
+  final num velocity, power;
   const ShowSpecs({
     @required this.image,
     @required this.units,
-    @required this.value,
+    @required this.velocity,
+    @required this.power,
   });
 
   @override
@@ -39,7 +40,7 @@ class ShowSpecs extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '$value $units',
+                '$velocity $units',
                 style: TextStyle(
                   fontFamily: 'Archivo',
                   fontWeight: FontWeight.normal,

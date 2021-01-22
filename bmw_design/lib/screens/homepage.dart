@@ -11,8 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Specs> carSpecs = [
-    Specs('speedPhoto.jpg', '- 60', 0),
-    Specs('wheelPhoto.png', 'MPH', 175),
+    Specs('speedPhoto.jpg', 'Km/h', 0, 0),
+    Specs('wheelPhoto.png', 'CV', 175, 175),
   ];
 
   @override
@@ -94,6 +94,7 @@ class _HomePageState extends State<HomePage> {
                                         .get('description'),
                                     snapshot.data.docs[index].get('photo'),
                                     carSpecs,
+                                    snapshot.data.docs[index].get('price'),
                                   ),
                                 ),
                               ),

@@ -280,7 +280,8 @@ class _CarSpecs extends StatelessWidget {
           ShowSpecs(
             image: feature.image,
             units: feature.units,
-            value: feature.value,
+            velocity: feature.velocity,
+            power: feature.power,
           ),
       ],
     );
@@ -323,7 +324,7 @@ class _CarName extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   alignment: Alignment(-1, 0),
-                  image: AssetImage('assets/buttons/circleImage.jpg'),
+                  image: AssetImage('assets/tempLogo.png'),
                 ),
                 border: Border.all(
                   color: Colors.red,

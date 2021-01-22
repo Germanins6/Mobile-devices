@@ -4,7 +4,6 @@
 
 import 'package:bmw_design/widgets/car.dart';
 import 'package:flutter/material.dart';
-//import 'package:bmw_design/widgets/car.dart';
 
 class BuyCar extends StatefulWidget {
   final Car cartobuy;
@@ -33,7 +32,7 @@ class _BuyCarState extends State<BuyCar> {
               ),
               Expanded(
                 flex: 6,
-                child: BuyCarInfo(),
+                child: BuyCarInfo(car: widget.cartobuy),
               ),
               IconButton(
                 icon: Icon(Icons.arrow_back_rounded),
@@ -73,6 +72,8 @@ class _BuyCarPreviewState extends State<BuyCarPreview> {
 }
 
 class BuyCarInfo extends StatefulWidget {
+  final Car car;
+  BuyCarInfo({this.car});
   @override
   _BuyCarInfoState createState() => _BuyCarInfoState();
 }
@@ -89,7 +90,7 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
           children: [
             Container(
               child: Text(
-                "Car Name",
+                '${widget.car.brand}',
                 style: TextStyle(
                   fontFamily: 'AdventProL',
                   color: Colors.white,
@@ -101,7 +102,7 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
             SizedBox(height: 20),
             Container(
               child: Text(
-                "Model, Manufacturer",
+                '${widget.car.model}',
                 style: TextStyle(
                   fontFamily: 'AdventProL',
                   color: Colors.white,
@@ -195,7 +196,7 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
               width: 10,
               height: 50,
               child: Text(
-                "999,99 €",
+                '${widget.car.price} €',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
@@ -226,9 +227,5 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
         ),
       ),
     );
-
-    //Car Name
-    //Model
-    //Price
   }
 }

@@ -1,7 +1,7 @@
 class Specs {
   String image, units;
-  num value;
-  Specs(this.image, this.units, this.value);
+  num velocity, power;
+  Specs(this.image, this.units, this.velocity, this.power);
 }
 
 class Car {
@@ -10,6 +10,7 @@ class Car {
   String model;
   String description;
   String photoUrl;
+  num price;
   List<Specs> carSpecs;
 
   Car(
@@ -19,5 +20,6 @@ class Car {
     this.description,
     this.photoUrl,
     this.carSpecs,
+    this.price,
   );
 }
