@@ -60,10 +60,6 @@ class _HomePageState extends State<HomePage> {
                     itemBuilder: (context, int index) {
                       return Container(
                         decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color(0xFFBE144D),
-                            width: 1,
-                          ),
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
                             fit: BoxFit.cover,

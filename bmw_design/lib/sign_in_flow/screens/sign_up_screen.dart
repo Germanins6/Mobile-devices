@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
+import '../../user.dart';
 
 class EmailAndPassword {
   String email, password, name, surname;
@@ -30,6 +33,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _password.dispose();
     super.dispose();
   }
+
+  final user = FirebaseFirestore.instance.collection('users');
 
   @override
   Widget build(BuildContext context) {
@@ -198,6 +203,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           _password.text,
                         ),
                       );
+                      user.doc(_email.text.toLowerCase()).set(
+                          CarUser(_name.text, _surname.text, _email.text)
+                              .toFirestore());
                     },
                   ),
                 ],
