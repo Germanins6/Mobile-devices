@@ -2,6 +2,7 @@
 
 //import 'package:flutter/cupertino.dart';
 
+import 'package:bmw_design/screens/homepage.dart';
 import 'package:bmw_design/widgets/car.dart';
 import 'package:flutter/material.dart';
 
@@ -249,6 +250,8 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
               child: RaisedButton(
                 color: Color(0xFFBE144D),
                 onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomePage()));
                   buy = true;
                 },
                 child: _ButtonText(
@@ -281,7 +284,7 @@ class __ButtonTextState extends State<_ButtonText> {
   Widget build(BuildContext context) {
     if (!widget.buy) {
       return Text(
-        "BUY NOW",
+        "PAY",
         textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white,

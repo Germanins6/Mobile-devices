@@ -85,6 +85,7 @@ class _ProfileState extends State<Profile> {
                                       'Name',
                                       style: TextStyle(
                                         fontSize: 20,
+                                        fontWeight: FontWeight.bold,
                                         color: Color(0xFFBE144D),
                                       ),
                                     ),
@@ -111,6 +112,7 @@ class _ProfileState extends State<Profile> {
                                       'Email',
                                       style: TextStyle(
                                         fontSize: 20,
+                                        fontWeight: FontWeight.bold,
                                         color: Color(0xFFBE144D),
                                       ),
                                     ),
