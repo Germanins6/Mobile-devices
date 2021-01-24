@@ -16,7 +16,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'My App which needs login',
+      title: 'Profile',
       home: Scaffold(
         body: StreamBuilder(
             stream: FirebaseFirestore.instance
@@ -124,7 +124,7 @@ class _ProfileState extends State<Profile> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 100),
+                              SizedBox(height: 80),
                               Container(
                                 alignment: Alignment.bottomCenter,
                                 child: FlatButton(
