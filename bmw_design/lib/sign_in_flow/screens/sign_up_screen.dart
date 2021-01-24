@@ -49,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
                   end: Alignment.topCenter,
-                  colors: [Color(0xFF26203E), Color(0xFF413972)],
+                  colors: [Color(0xFF1b2139), Color(0xFF151828)],
                 ),
               ),
             ),

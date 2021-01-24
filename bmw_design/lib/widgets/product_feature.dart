@@ -18,7 +18,7 @@ class ShowSpecs extends StatelessWidget {
           width: 150,
           height: 100,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.red),
+            border: Border.all(color: Color(0xFFBE144D)),
             borderRadius: BorderRadius.all(
               Radius.circular(16),
             ),

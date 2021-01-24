@@ -10,6 +10,8 @@ class Car {
   String model;
   String description;
   String photoUrl;
+  String buyPhoto;
+  String brandLogo;
   num price;
   List<Specs> carSpecs;
 
@@ -19,6 +21,8 @@ class Car {
     this.model,
     this.description,
     this.photoUrl,
+    this.buyPhoto,
+    this.brandLogo,
     this.carSpecs,
     this.price,
   );

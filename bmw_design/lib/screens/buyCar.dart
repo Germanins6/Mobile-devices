@@ -19,11 +19,6 @@ class _BuyCarState extends State<BuyCar> {
       backgroundColor: Color(0xFF1b2139),
       body: Stack(
         children: [
-          SafeArea(
-            child: Padding(
-              padding: EdgeInsets.all(8),
-            ),
-          ),
           Column(
             children: [
               Expanded(
@@ -34,14 +29,19 @@ class _BuyCarState extends State<BuyCar> {
                 flex: 6,
                 child: BuyCarInfo(car: widget.cartobuy),
               ),
-              IconButton(
+            ],
+          ),
+          SafeArea(
+            child: Padding(
+              padding: EdgeInsets.all(8),
+              child: IconButton(
                 icon: Icon(Icons.arrow_back_rounded),
                 color: Colors.white,
                 onPressed: () {
                   Navigator.pop(context);
                 },
               ),
-            ],
+            ),
           ),
         ],
       ),
@@ -62,7 +62,7 @@ class _BuyCarPreviewState extends State<BuyCarPreview> {
     return Container(
       alignment: Alignment.topCenter,
       child: Image.network(
-        widget.car.photoUrl,
+        widget.car.buyPhoto,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         fit: BoxFit.cover,
@@ -130,7 +130,7 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
                     height: 20,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.red,
+                      color: Color(0xFFBE144D),
                       border: Border.all(color: Colors.white),
                     ),
                   ),
@@ -210,7 +210,7 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
                 width: 150,
                 height: 50,
                 child: RaisedButton(
-                  color: Colors.red,
+                  color: Color(0xFFBE144D),
                   onPressed: () {},
                   child: Text(
                     "BUY NOW",

@@ -90,7 +90,7 @@ class _SignInScreenState extends State<SignInScreen> {
               gradient: LinearGradient(
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
-                colors: [Color(0xFF26203E), Color(0xFF413972)],
+                colors: [Color(0xFF1b2139), Color(0xFF151828)],
               ),
             ),
           ),
@@ -104,8 +104,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 Container(
                   height: 300,
                   width: 200,
-                  child: Image.asset(
-                    'assets/tempLogo.png',
+                  child: Image.network(
+                    'https://firebasestorage.googleapis.com/v0/b/carappdispositius.appspot.com/o/tempLogo.png?alt=media&token=bbfe6f55-4af7-4e84-8bd5-84318580eca2',
                     height: 150,
                     width: 150,
                     fit: BoxFit.cover,

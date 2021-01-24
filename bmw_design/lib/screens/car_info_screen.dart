@@ -36,14 +36,6 @@ class _CarInfoScreenState extends State<CarInfoScreen> {
               ),
             ],
           ),
-          SafeArea(
-            child: Padding(
-                padding: EdgeInsets.all(8),
-                child: IconButton(
-                  icon: Icon(Icons.favorite_outline_sharp),
-                  onPressed: () {},
-                )),
-          ),
         ],
       ),
     );
@@ -172,6 +164,7 @@ class __CarInfoBodyState extends State<_CarInfoBody> {
             _CarName(
               name: '${widget.car.brand}',
               model: '${widget.car.model}',
+              brandphoto: '${widget.car.brandLogo}',
             ),
             SizedBox(height: 20),
             _CarDescription(description: '${widget.car.description}'),
@@ -237,7 +230,7 @@ class _BottomIcons extends StatelessWidget {
         ),
         //MiddleButton
         FloatingActionButton(
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xFFBE144D),
           child: Icon(
             Icons.add_shopping_cart_rounded,
             size: 20,
@@ -309,7 +302,8 @@ class _CarDescription extends StatelessWidget {
 class _CarName extends StatelessWidget {
   final String name;
   final String model;
-  _CarName({this.name, this.model});
+  final String brandphoto;
+  _CarName({this.name, this.model, this.brandphoto});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -320,14 +314,15 @@ class _CarName extends StatelessWidget {
               width: 70,
               height: 70,
               decoration: BoxDecoration(
+                color: Colors.white,
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                   alignment: Alignment(-1, 0),
-                  image: AssetImage('assets/tempLogo.png'),
+                  image: NetworkImage(brandphoto),
                 ),
                 border: Border.all(
-                  color: Colors.red,
+                  color: Color(0xFFBE144D),
                   width: 1,
                 ),
               ),
@@ -344,6 +339,7 @@ class _CarName extends StatelessWidget {
                 fontSize: 22,
               ),
             ),
+            SizedBox(width: 4),
             Text(
               model,
               textAlign: TextAlign.end,

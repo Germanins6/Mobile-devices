@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,7 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'My App which needs login',
       home: Scaffold(
         body: StreamBuilder(
@@ -36,12 +39,12 @@ class _ProfileState extends State<Profile> {
                         gradient: LinearGradient(
                           begin: Alignment.bottomCenter,
                           end: Alignment.topCenter,
-                          colors: [Color(0xFF26203E), Color(0xFF413972)],
+                          colors: [Color(0xFF1b2139), Color(0xFF151828)],
                         ),
                       ),
                       child: SingleChildScrollView(
                         child: Padding(
-                          padding: EdgeInsets.all(32),
+                          padding: EdgeInsets.all(40),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -49,7 +52,7 @@ class _ProfileState extends State<Profile> {
                               Container(
                                 alignment: Alignment.topCenter,
                                 child: Text(
-                                  'User Profile',
+                                  'Profile',
                                   style: TextStyle(
                                     fontSize: 30,
                                     color: Colors.white,
@@ -57,16 +60,71 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ),
                               SizedBox(height: 50),
-                              Container(
-                                child: Text(
-                                  'Email ${snapshot.data["email"]} Name: ${snapshot.data["name"]} Surname: ${snapshot.data["surname"]},',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
+                              Center(
+                                child: Container(
+                                  alignment: Alignment.topCenter,
+                                  height: 250,
+                                  width: 250,
+                                  child: Image(
+                                    fit: BoxFit.cover,
+                                    image: NetworkImage(
+                                        "https://firebasestorage.googleapis.com/v0/b/carappdispositius.appspot.com/o/ProfilePic.png?alt=media&token=acf10f20-49a7-4c86-b2cc-57ec8600b397"),
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 150),
+                              SizedBox(height: 20),
+                              Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Name',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Color(0xFFBE144D),
+                                      ),
+                                    ),
+                                    Text(
+                                      '${snapshot.data["name"]} ${snapshot.data["surname"]}',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Email',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Color(0xFFBE144D),
+                                      ),
+                                    ),
+                                    Text(
+                                      '${snapshot.data["email"]}',
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 100),
                               Container(
                                 alignment: Alignment.bottomCenter,
                                 child: FlatButton(
