@@ -89,19 +89,7 @@ class _CarInfoTabs extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                'DESIGN',
-                style: style,
-              ),
-              Text(
-                'SPEC',
-                style: style,
-              ),
-              Text(
-                'HISTORY',
-                style: style,
-              ),
-              Text(
-                'HIRE',
+                'DESIGN AND SPECS',
                 style: style,
               ),
             ],
