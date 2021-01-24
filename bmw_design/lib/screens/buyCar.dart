@@ -89,14 +89,17 @@ class _BuyCarInfoState extends State<BuyCarInfo> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              child: Text(
-                '${widget.car.brand}',
-                style: TextStyle(
-                  fontFamily: 'AdventProL',
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+              child: FlatButton(
+                child: Text(
+                  '${widget.car.brand}',
+                  style: TextStyle(
+                    fontFamily: 'AdventProL',
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                onPressed: () {},
               ),
             ),
             SizedBox(height: 20),

@@ -102,13 +102,13 @@ class _SignInScreenState extends State<SignInScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
-                  height: 300,
-                  width: 200,
+                  height: 250,
+                  width: 250,
                   child: Image.network(
                     'https://firebasestorage.googleapis.com/v0/b/carappdispositius.appspot.com/o/tempLogo.png?alt=media&token=bbfe6f55-4af7-4e84-8bd5-84318580eca2',
                     height: 150,
                     width: 150,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(height: 20),
@@ -199,7 +199,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     );
                   },
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
